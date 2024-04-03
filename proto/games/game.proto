@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package games;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/games";
+
+service V1Games {
+    rpc GetGames(GetGamesRequest) returns (GetGamesReply) {}
+    rpc CreateGame(CreateGameRequest) returns (EmptyReply) {}
+    rpc DeleteGame(DeleteGameRequest) returns (EmptyReply) {}
+}
+
+message GetGamesRequest {
+    string JWT = 1;
+    int64 limit = 2;
+    int64 offset = 3;
+}
+
+message GetGamesReply {
+    repeated Game games = 1;
+}
+
+message CreateGameRequest {
+    string JWT = 1;
+    string name = 2;
+}
+
+message DeleteGameRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message Game {
+    string id = 1;
+    string name = 2;
+    google.protobuf.Timestamp createdAt = 3; 
+}
+
+message EmptyReply {
+}

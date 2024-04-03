@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package unittypes;
+
+import "google/protobuf/timestamp.proto";
+import "proto/unittypes/types.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/unittypes";
+
+service V1UnitTypes {
+    rpc GetUnitTypes(GetUnitTypesRequest) returns (GetUnitTypesReply) {}
+    rpc GetUnitType(GetUnitTypeRequest) returns (unittypes.UnitType) {}
+    rpc CreateUnitType(CreateUnitTypeRequest) returns (unittypes.UnitType) {}
+    rpc UpdateUnitType(UpdateUnitTypeRequest) returns (unittypes.UnitType) {}
+    rpc DeleteUnitType(DeleteUnitTypeRequest) returns (EmptyReply) {}
+    rpc GetBasicUnitTypesByArmyTypeID(ArmyTypeIdRequest) returns (ArmyTypeIdReply) {}
+}
+
+message ArmyTypeIdRequest {
+    string JWT = 1;
+    string armyTypeId = 2;
+}
+
+message ArmyTypeIdReply {
+    repeated unittypes.UnitType unitTypes = 1;
+}
+
+message GetUnitTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetUnitTypesRequest {
+    string JWT = 1;
+    string armyTypeId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+    bool includeUnitTypeOptions = 5;
+}
+
+message GetUnitTypesReply {
+    repeated unittypes.UnitType unitTypes = 1;
+    int64 count = 2;
+}
+
+message CreateUnitTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+    string armyTypeId = 4;
+    string troopTypeId = 5;
+    string compositionTypeId = 6;
+    int64 pointsPerModel = 7;
+    int64 minModels = 8;
+    int64 maxModels = 9;
+    string unitTypeId = 10;
+}
+
+message UpdateUnitTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+    string troopTypeId = 4;
+    string compositionTypeId = 5;
+}
+
+message EmptyReply {
+}

@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+package unittypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/unittypes";
+
+message DeleteUnitTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message Statistic {
+    string id = 1;
+    string name = 2;
+    string display = 3;
+    string gameId = 4;
+    google.protobuf.Timestamp createdAt = 5;
+}
+
+message UnitStatistic {
+    string id = 1;
+    string value = 2;
+    string unitTypeId = 3;
+    string statisticId = 4;
+    Statistic statistic = 5;
+    google.protobuf.Timestamp createdAt = 6; 
+}
+
+message UnitTypeChild {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    string armyTypeId = 4;
+    string armyTypeName = 5;
+    string troopTypeId = 6;
+    string troopTypeName = 7;
+    string compositionTypeId = 8;
+    string compositionTypeName = 9;
+    int64 pointsPerModel = 10;
+    int64 minModels = 11;
+    int64 maxModels = 12;
+    repeated UnitStatistic statistics = 13;
+    google.protobuf.Timestamp createdAt = 14; 
+}
+
+message Item {
+    string id = 1;
+    string name = 2;
+    int64 points = 3;
+    string itemTypeId = 4;
+    string itemTypeName = 5;
+    string gameId = 6;
+    string armyTypeId = 7;
+    google.protobuf.Timestamp createdAt = 8;
+    string description = 9;
+    string story = 10;
+}
+
+message UnitOptionValue {
+    string id = 1;
+    string userArmyUnitId = 2;
+    string userArmyUnitName = 3;
+    string unitOptionId = 4;
+    string unitOptionName = 5;
+    bool isSelected = 6;
+    string indexSelected = 7;
+    repeated string idsSelected = 8;
+    int64 qtySelected = 9;
+    google.protobuf.Timestamp createdAt = 10;
+}
+
+message UnitTypeOption {
+    string id = 1;
+    string unitTypeId = 2;
+    string unitTypeName = 3;
+    string unitOptionTypeId = 4;
+    string unitOptionTypeName = 5;
+    string txt = 6;
+    int64 points = 7;
+    bool perModel = 8;
+    int64 maxPoints = 9;
+    repeated Item items = 10;
+    google.protobuf.Timestamp createdAt = 11;
+    UnitOptionValue value = 12;
+}
+
+message UnitType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    string armyTypeId = 4;
+    string armyTypeName = 5;
+    string troopTypeId = 6;
+    string troopTypeName = 7;
+    string compositionTypeId = 8;
+    string compositionTypeName = 9;
+    int64 pointsPerModel = 10;
+    int64 minModels = 11;
+    int64 maxModels = 12;
+    repeated UnitStatistic statistics = 13;
+    repeated UnitTypeChild children = 14;
+    repeated UnitTypeOption options = 15;
+    google.protobuf.Timestamp createdAt = 16; 
+}

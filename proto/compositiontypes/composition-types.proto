@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package compositiontypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/compositiontypes";
+
+service V1CompositionTypes {
+    rpc GetCompositionTypes(GetCompositionTypesRequest) returns (GetCompositionTypesReply) {}
+    rpc GetCompositionType(GetCompositionTypeRequest) returns (CompositionType) {}
+    rpc CreateCompositionType(CreateCompositionTypeRequest) returns (CompositionType) {}
+    rpc UpdateCompositionType(UpdateCompositionTypeRequest) returns (CompositionType) {}
+    rpc DeleteCompositionType(DeleteCompositionTypeRequest) returns (EmptyReply) {}
+}
+
+message GetCompositionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetCompositionTypesRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetCompositionTypesReply {
+    repeated CompositionType compositionTypes = 1;
+    int64 count = 2;
+}
+
+message CreateCompositionTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+}
+
+message UpdateCompositionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+}
+
+message DeleteCompositionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message CompositionType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    google.protobuf.Timestamp createdAt = 4; 
+}
+
+message EmptyReply {
+}

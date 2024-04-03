@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package userarmies;
+
+import "proto/userarmies/units.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/userarmies";
+
+service V1UserArmyUnits {
+    rpc GetUnit(GetUnitRequest) returns (GetUnitReply) {}
+    rpc UpdateUnit(UpdateUnitRequest) returns (UpdateUnitReply) {}
+}
+
+message GetUnitRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetUnitReply {
+    userarmies.ArmyUnit unit = 1;
+}
+
+message UpdateUserArmyUnitOptionValue {
+    string id = 1;
+    bool is_selected = 2;
+    string index_selected = 3;
+    repeated string ids_selected = 4;
+    int64 qty_selected = 5;
+}
+
+message UpdateUserArmyUnit {
+    string id = 1;
+    oneof qty {
+        bool qty_null = 2;
+        int64 qty_value = 3;
+    }
+    repeated UpdateUserArmyUnitOptionValue option_values = 4;
+    int64 points = 5;
+}
+
+message UpdateUnitRequest {
+    string JWT = 1;
+    UpdateUserArmyUnit update_army_unit = 2;
+}
+
+message UpdateUnitReply {
+
+}

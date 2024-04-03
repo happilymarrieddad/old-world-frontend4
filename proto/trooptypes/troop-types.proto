@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package trooptypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/trooptypes";
+
+service V1TroopTypes {
+    rpc GetTroopTypes(GetTroopTypesRequest) returns (GetTroopTypesReply) {}
+    rpc GetTroopType(GetTroopTypeRequest) returns (TroopType) {}
+    rpc CreateTroopType(CreateTroopTypeRequest) returns (TroopType) {}
+    rpc UpdateTroopType(UpdateTroopTypeRequest) returns (TroopType) {}
+    rpc DeleteTroopType(DeleteTroopTypeRequest) returns (EmptyReply) {}
+}
+
+message GetTroopTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetTroopTypesRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetTroopTypesReply {
+    repeated TroopType troopTypes = 1;
+    int64 count = 2;
+}
+
+message CreateTroopTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+}
+
+message UpdateTroopTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+}
+
+message DeleteTroopTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message TroopType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    google.protobuf.Timestamp createdAt = 4; 
+}
+
+message EmptyReply {
+}

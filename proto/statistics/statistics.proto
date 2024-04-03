@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package statistics;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/statistics";
+
+service V1Statistics {
+    rpc GetStatistics(GetStatisticsRequest) returns (GetStatisticsReply) {}
+    rpc GetStatistic(GetStatisticRequest) returns (Statistic) {}
+    rpc CreateStatistic(CreateStatisticRequest) returns (Statistic) {}
+    rpc UpdateStatistic(UpdateStatisticRequest) returns (Statistic) {}
+    rpc DeleteStatistic(DeleteStatisticRequest) returns (EmptyReply) {}
+}
+
+message GetStatisticRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetStatisticsRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetStatisticsReply {
+    repeated Statistic statistics = 1;
+    int64 count = 2;
+}
+
+message CreateStatisticRequest {
+    string JWT = 1;
+    string name = 2;
+    string display = 3;
+    string gameId = 4;
+}
+
+message UpdateStatisticRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+    string display = 4;
+}
+
+message DeleteStatisticRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message Statistic {
+    string id = 1;
+    string name = 2;
+    string display = 3;
+    string gameId = 4;
+    google.protobuf.Timestamp createdAt = 5; 
+}
+
+message EmptyReply {
+}

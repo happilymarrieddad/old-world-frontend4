@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package armytypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/armytypes";
+
+service V1ArmyTypes {
+    rpc GetArmyTypes(GetArmyTypesRequest) returns (GetArmyTypesReply) {}
+    rpc GetArmyType(GetArmyTypeRequest) returns (ArmyType) {}
+    rpc CreateArmyType(CreateArmyTypeRequest) returns (ArmyType) {}
+    rpc UpdateArmyType(UpdateArmyTypeRequest) returns (ArmyType) {}
+    rpc DeleteArmyType(DeleteArmyTypeRequest) returns (EmptyReply) {}
+}
+
+message GetArmyTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetArmyTypesRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetArmyTypesReply {
+    repeated ArmyType armyTypes = 1;
+    int64 count = 2;
+}
+
+message CreateArmyTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+}
+
+message UpdateArmyTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+}
+
+message DeleteArmyTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message ArmyType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    google.protobuf.Timestamp createdAt = 4; 
+}
+
+message EmptyReply {
+}

@@ -1,0 +1,78 @@
+
+syntax = "proto3";
+
+package userarmies;
+
+import "google/protobuf/timestamp.proto";
+import "proto/userarmies/armies.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/userarmies";
+
+service V1UserArmies {
+    rpc GetUserArmies(GetUserArmiesRequest) returns (GetUserArmiesReply) {}
+    rpc GetUserArmy(GetUserArmyRequest) returns (GetUserArmyReply) {}
+    rpc CreateUserArmy(CreateUserArmyRequest) returns (CreateUserArmyReply) {}
+    rpc DestroyUserArmy(DestroyUserArmyRequest) returns (EmptyReply) {}
+    rpc AddUnit(AddUnitRequest) returns (EmptyReply) {}
+    rpc RemoveUnit(RemoveUnitRequest) returns (EmptyReply) {}
+    rpc UpdateUserArmy(UpdateUserArmyRequest) returns (GetUserArmyReply) {}
+}
+
+message UpdateUserArmyRequest {
+    string JWT = 1;
+    string userArmyId = 2;
+    string name = 3;
+    int64 points = 4;
+}
+
+message AddUnitRequest {
+    string JWT = 1;
+    string userArmyId = 2;
+    string unitTypeid = 3;
+}
+
+message RemoveUnitRequest {
+    string JWT = 1;
+    string id = 2;
+    string userArmyId = 3;
+}
+
+message GetUserArmyRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetUserArmyReply {
+    userarmies.UserArmy userArmy = 1;
+}
+
+message DestroyUserArmyRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetUserArmiesRequest {
+    string JWT = 1;
+    int64 limit = 2;
+    int64 offset = 3;
+}
+
+message GetUserArmiesReply {
+    repeated userarmies.UserArmy userArmies = 1;
+    int64 count = 2;
+}
+
+message CreateUserArmyRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+    string armyTypeId = 4;
+    int64 points = 5;
+}
+
+message CreateUserArmyReply {
+    userarmies.UserArmy userArmy = 1;
+}
+
+message EmptyReply {
+}

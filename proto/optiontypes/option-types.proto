@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package optiontypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/optiontypes";
+
+service V1OptionTypes {
+    rpc GetOptionTypes(GetOptionTypesRequest) returns (GetOptionTypesReply) {}
+    rpc GetOptionType(GetOptionTypeRequest) returns (OptionType) {}
+    rpc CreateOptionType(CreateOptionTypeRequest) returns (OptionType) {}
+    rpc UpdateOptionType(UpdateOptionTypeRequest) returns (OptionType) {}
+    rpc DeleteOptionType(DeleteOptionTypeRequest) returns (EmptyReply) {}
+}
+
+message GetOptionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetOptionTypesRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetOptionTypesReply {
+    repeated OptionType optionTypes = 1;
+    int64 count = 2;
+}
+
+message CreateOptionTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+}
+
+message UpdateOptionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+}
+
+message DeleteOptionTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message OptionType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    google.protobuf.Timestamp createdAt = 4; 
+}
+
+message EmptyReply {
+}

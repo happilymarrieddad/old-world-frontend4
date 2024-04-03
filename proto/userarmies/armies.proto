@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package userarmies;
+
+import "google/protobuf/timestamp.proto";
+import "proto/userarmies/units.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/userarmies";
+
+message UserArmy {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    string gameName = 4;
+    string armyTypeId = 5;
+    string armyTypeName = 6;
+    int64 points = 7;
+    repeated userarmies.ArmyUnit units = 8;
+    google.protobuf.Timestamp createdAt = 9;
+}

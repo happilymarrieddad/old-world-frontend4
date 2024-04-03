@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package itemtypes;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/itemtypes";
+
+service V1ItemTypes {
+    rpc GetItemTypes(GetItemTypesRequest) returns (GetItemTypesReply) {}
+    rpc GetItemType(GetItemTypeRequest) returns (ItemType) {}
+    rpc CreateItemType(CreateItemTypeRequest) returns (ItemType) {}
+    rpc UpdateItemType(UpdateItemTypeRequest) returns (ItemType) {}
+    rpc DeleteItemType(DeleteItemTypeRequest) returns (EmptyReply) {}
+}
+
+message GetItemTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetItemTypesRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetItemTypesReply {
+    repeated ItemType itemTypes = 1;
+    int64 count = 2;
+}
+
+message CreateItemTypeRequest {
+    string JWT = 1;
+    string name = 2;
+    string gameId = 3;
+}
+
+message UpdateItemTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+}
+
+message DeleteItemTypeRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message ItemType {
+    string id = 1;
+    string name = 2;
+    string gameId = 3;
+    google.protobuf.Timestamp createdAt = 4; 
+}
+
+message EmptyReply {
+}
