@@ -72,6 +72,12 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/userArmies/RemoveUnitView.vue')
     },
+    {
+      path: '/user-armies/edit/:userarmyid/unit/:armyunitid',
+      name: 'userArmiesUnitEdit',
+      meta: { auth: true },
+      component: () => import('../views/userArmies/EditUnitView.vue')
+    },
 
     // Auth
     { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },

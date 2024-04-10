@@ -12,6 +12,7 @@ import {
 } from '@/gen/proto/auth/auth_pb'
 import transport from '@/models/transport'
 import { type User } from '@/models/users'
+import { ElMessage } from 'element-plus'
 
 const client = createPromiseClient(Auth, transport)
 
@@ -86,6 +87,8 @@ export const useAppStore = defineStore('app', () => {
           resolve(undefined)
         })
         .catch(() => {
+          clearToken()
+          ElMessage.error('invalid credentials going to login page')
           resolve('unable to validate token')
         })
     })

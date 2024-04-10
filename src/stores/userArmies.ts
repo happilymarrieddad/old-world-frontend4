@@ -83,7 +83,7 @@ export const useUserArmiesStore = defineStore('userArmies', () => {
         })
         .catch((err) => {
           console.table(err)
-          resolve([undefined, 'unable to create a new user army'])
+          resolve([undefined, 'unable to get user army data'])
         })
     })
   }

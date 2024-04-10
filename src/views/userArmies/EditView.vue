@@ -6,7 +6,7 @@ import { useUserArmiesStore } from '@/stores/userArmies'
 import type { UserArmy } from '@/gen/proto/userarmies/armies_pb'
 import { ArmyUnit } from '@/gen/proto/userarmies/units_pb.js'
 import { useAppStore } from '@/stores/app'
-import { ElMessage, TableV2FixedDir, ElLink, ElPopconfirm } from 'element-plus'
+import { ElMessage, TableV2FixedDir, ElLink, ElButton } from 'element-plus'
 import { Edit, Delete } from '@element-plus/icons-vue'
 
 const appStore = useAppStore()
@@ -88,6 +88,7 @@ const unitColumns = ref<any>([
     width: 200,
     fixed: TableV2FixedDir.RIGHT,
     title: 'Options',
+    // data.rowData has all the data.. use that at some point
     cellRenderer: (data: any) => (
       <>
         <ElLink
@@ -97,18 +98,14 @@ const unitColumns = ref<any>([
         >
           Edit
         </ElLink>
-        <ElPopconfirm title="Are you sure to delete this?">
-          <template #reference>
-            <ElLink
-              class="btn-padding-left"
-              underline={false}
-              icon={Delete}
-              href={`/user-armies/unit/destroy/${data.cellData}`}
-            >
-              Delete
-            </ElLink>
-          </template>
-        </ElPopconfirm>
+        <ElLink
+          style="padding-left:10px"
+          underline={false}
+          icon={Delete}
+          href={`/user-armies/unit/destroy/${data.cellData}`}
+        >
+          Delete
+        </ElLink>
       </>
     )
   }
