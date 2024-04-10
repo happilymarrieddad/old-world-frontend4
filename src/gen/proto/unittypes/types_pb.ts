@@ -3,8 +3,15 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
-import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
+import type {
+  BinaryReadOptions,
+  FieldList,
+  JsonReadOptions,
+  JsonValue,
+  PartialMessage,
+  PlainMessage
+} from '@bufbuild/protobuf'
+import { Message, proto3, protoInt64, Timestamp } from '@bufbuild/protobuf'
 
 /**
  * @generated from message unittypes.DeleteUnitTypeRequest
@@ -13,39 +20,48 @@ export class DeleteUnitTypeRequest extends Message<DeleteUnitTypeRequest> {
   /**
    * @generated from field: string JWT = 1;
    */
-  JWT = "";
+  JWT = ''
 
   /**
    * @generated from field: string id = 2;
    */
-  id = "";
+  id = ''
 
   constructor(data?: PartialMessage<DeleteUnitTypeRequest>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.DeleteUnitTypeRequest";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.DeleteUnitTypeRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "JWT", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
+    { no: 1, name: 'JWT', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ }
+  ])
 
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): DeleteUnitTypeRequest {
-    return new DeleteUnitTypeRequest().fromBinary(bytes, options);
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>
+  ): DeleteUnitTypeRequest {
+    return new DeleteUnitTypeRequest().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): DeleteUnitTypeRequest {
-    return new DeleteUnitTypeRequest().fromJson(jsonValue, options);
+    return new DeleteUnitTypeRequest().fromJson(jsonValue, options)
   }
 
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): DeleteUnitTypeRequest {
-    return new DeleteUnitTypeRequest().fromJsonString(jsonString, options);
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>
+  ): DeleteUnitTypeRequest {
+    return new DeleteUnitTypeRequest().fromJsonString(jsonString, options)
   }
 
-  static equals(a: DeleteUnitTypeRequest | PlainMessage<DeleteUnitTypeRequest> | undefined, b: DeleteUnitTypeRequest | PlainMessage<DeleteUnitTypeRequest> | undefined): boolean {
-    return proto3.util.equals(DeleteUnitTypeRequest, a, b);
+  static equals(
+    a: DeleteUnitTypeRequest | PlainMessage<DeleteUnitTypeRequest> | undefined,
+    b: DeleteUnitTypeRequest | PlainMessage<DeleteUnitTypeRequest> | undefined
+  ): boolean {
+    return proto3.util.equals(DeleteUnitTypeRequest, a, b)
   }
 }
 
@@ -56,57 +72,60 @@ export class Statistic extends Message<Statistic> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string name = 2;
    */
-  name = "";
+  name = ''
 
   /**
    * @generated from field: string display = 3;
    */
-  display = "";
+  display = ''
 
   /**
    * @generated from field: string gameId = 4;
    */
-  gameId = "";
+  gameId = ''
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 5;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   constructor(data?: PartialMessage<Statistic>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.Statistic";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.Statistic'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "display", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "gameId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "createdAt", kind: "message", T: Timestamp },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'display', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'gameId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'createdAt', kind: 'message', T: Timestamp }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Statistic {
-    return new Statistic().fromBinary(bytes, options);
+    return new Statistic().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Statistic {
-    return new Statistic().fromJson(jsonValue, options);
+    return new Statistic().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Statistic {
-    return new Statistic().fromJsonString(jsonString, options);
+    return new Statistic().fromJsonString(jsonString, options)
   }
 
-  static equals(a: Statistic | PlainMessage<Statistic> | undefined, b: Statistic | PlainMessage<Statistic> | undefined): boolean {
-    return proto3.util.equals(Statistic, a, b);
+  static equals(
+    a: Statistic | PlainMessage<Statistic> | undefined,
+    b: Statistic | PlainMessage<Statistic> | undefined
+  ): boolean {
+    return proto3.util.equals(Statistic, a, b)
   }
 }
 
@@ -117,63 +136,66 @@ export class UnitStatistic extends Message<UnitStatistic> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string value = 2;
    */
-  value = "";
+  value = ''
 
   /**
    * @generated from field: string unitTypeId = 3;
    */
-  unitTypeId = "";
+  unitTypeId = ''
 
   /**
    * @generated from field: string statisticId = 4;
    */
-  statisticId = "";
+  statisticId = ''
 
   /**
    * @generated from field: unittypes.Statistic statistic = 5;
    */
-  statistic?: Statistic;
+  statistic?: Statistic
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 6;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   constructor(data?: PartialMessage<UnitStatistic>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UnitStatistic";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.UnitStatistic'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "value", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "unitTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "statisticId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "statistic", kind: "message", T: Statistic },
-    { no: 6, name: "createdAt", kind: "message", T: Timestamp },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'value', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'unitTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'statisticId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'statistic', kind: 'message', T: Statistic },
+    { no: 6, name: 'createdAt', kind: 'message', T: Timestamp }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitStatistic {
-    return new UnitStatistic().fromBinary(bytes, options);
+    return new UnitStatistic().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnitStatistic {
-    return new UnitStatistic().fromJson(jsonValue, options);
+    return new UnitStatistic().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnitStatistic {
-    return new UnitStatistic().fromJsonString(jsonString, options);
+    return new UnitStatistic().fromJsonString(jsonString, options)
   }
 
-  static equals(a: UnitStatistic | PlainMessage<UnitStatistic> | undefined, b: UnitStatistic | PlainMessage<UnitStatistic> | undefined): boolean {
-    return proto3.util.equals(UnitStatistic, a, b);
+  static equals(
+    a: UnitStatistic | PlainMessage<UnitStatistic> | undefined,
+    b: UnitStatistic | PlainMessage<UnitStatistic> | undefined
+  ): boolean {
+    return proto3.util.equals(UnitStatistic, a, b)
   }
 }
 
@@ -184,111 +206,114 @@ export class UnitTypeChild extends Message<UnitTypeChild> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string name = 2;
    */
-  name = "";
+  name = ''
 
   /**
    * @generated from field: string gameId = 3;
    */
-  gameId = "";
+  gameId = ''
 
   /**
    * @generated from field: string armyTypeId = 4;
    */
-  armyTypeId = "";
+  armyTypeId = ''
 
   /**
    * @generated from field: string armyTypeName = 5;
    */
-  armyTypeName = "";
+  armyTypeName = ''
 
   /**
    * @generated from field: string troopTypeId = 6;
    */
-  troopTypeId = "";
+  troopTypeId = ''
 
   /**
    * @generated from field: string troopTypeName = 7;
    */
-  troopTypeName = "";
+  troopTypeName = ''
 
   /**
    * @generated from field: string compositionTypeId = 8;
    */
-  compositionTypeId = "";
+  compositionTypeId = ''
 
   /**
    * @generated from field: string compositionTypeName = 9;
    */
-  compositionTypeName = "";
+  compositionTypeName = ''
 
   /**
    * @generated from field: int64 pointsPerModel = 10;
    */
-  pointsPerModel = protoInt64.zero;
+  pointsPerModel = protoInt64.zero
 
   /**
    * @generated from field: int64 minModels = 11;
    */
-  minModels = protoInt64.zero;
+  minModels = protoInt64.zero
 
   /**
    * @generated from field: int64 maxModels = 12;
    */
-  maxModels = protoInt64.zero;
+  maxModels = protoInt64.zero
 
   /**
    * @generated from field: repeated unittypes.UnitStatistic statistics = 13;
    */
-  statistics: UnitStatistic[] = [];
+  statistics: UnitStatistic[] = []
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 14;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   constructor(data?: PartialMessage<UnitTypeChild>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UnitTypeChild";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.UnitTypeChild'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "gameId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "armyTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "armyTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "troopTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "troopTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "compositionTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "compositionTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "pointsPerModel", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 11, name: "minModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 12, name: "maxModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 13, name: "statistics", kind: "message", T: UnitStatistic, repeated: true },
-    { no: 14, name: "createdAt", kind: "message", T: Timestamp },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'gameId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'armyTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'armyTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'troopTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: 'troopTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: 'compositionTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: 'compositionTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: 'pointsPerModel', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: 'minModels', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: 'maxModels', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: 'statistics', kind: 'message', T: UnitStatistic, repeated: true },
+    { no: 14, name: 'createdAt', kind: 'message', T: Timestamp }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitTypeChild {
-    return new UnitTypeChild().fromBinary(bytes, options);
+    return new UnitTypeChild().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnitTypeChild {
-    return new UnitTypeChild().fromJson(jsonValue, options);
+    return new UnitTypeChild().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnitTypeChild {
-    return new UnitTypeChild().fromJsonString(jsonString, options);
+    return new UnitTypeChild().fromJsonString(jsonString, options)
   }
 
-  static equals(a: UnitTypeChild | PlainMessage<UnitTypeChild> | undefined, b: UnitTypeChild | PlainMessage<UnitTypeChild> | undefined): boolean {
-    return proto3.util.equals(UnitTypeChild, a, b);
+  static equals(
+    a: UnitTypeChild | PlainMessage<UnitTypeChild> | undefined,
+    b: UnitTypeChild | PlainMessage<UnitTypeChild> | undefined
+  ): boolean {
+    return proto3.util.equals(UnitTypeChild, a, b)
   }
 }
 
@@ -299,87 +324,90 @@ export class Item extends Message<Item> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string name = 2;
    */
-  name = "";
+  name = ''
 
   /**
    * @generated from field: int64 points = 3;
    */
-  points = protoInt64.zero;
+  points = protoInt64.zero
 
   /**
    * @generated from field: string itemTypeId = 4;
    */
-  itemTypeId = "";
+  itemTypeId = ''
 
   /**
    * @generated from field: string itemTypeName = 5;
    */
-  itemTypeName = "";
+  itemTypeName = ''
 
   /**
    * @generated from field: string gameId = 6;
    */
-  gameId = "";
+  gameId = ''
 
   /**
    * @generated from field: string armyTypeId = 7;
    */
-  armyTypeId = "";
+  armyTypeId = ''
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 8;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   /**
    * @generated from field: string description = 9;
    */
-  description = "";
+  description = ''
 
   /**
    * @generated from field: string story = 10;
    */
-  story = "";
+  story = ''
 
   constructor(data?: PartialMessage<Item>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.Item";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.Item'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "points", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 4, name: "itemTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "itemTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "gameId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "armyTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "createdAt", kind: "message", T: Timestamp },
-    { no: 9, name: "description", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "story", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'points', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 4, name: 'itemTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'itemTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'gameId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: 'armyTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: 'createdAt', kind: 'message', T: Timestamp },
+    { no: 9, name: 'description', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: 'story', kind: 'scalar', T: 9 /* ScalarType.STRING */ }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Item {
-    return new Item().fromBinary(bytes, options);
+    return new Item().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): Item {
-    return new Item().fromJson(jsonValue, options);
+    return new Item().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): Item {
-    return new Item().fromJsonString(jsonString, options);
+    return new Item().fromJsonString(jsonString, options)
   }
 
-  static equals(a: Item | PlainMessage<Item> | undefined, b: Item | PlainMessage<Item> | undefined): boolean {
-    return proto3.util.equals(Item, a, b);
+  static equals(
+    a: Item | PlainMessage<Item> | undefined,
+    b: Item | PlainMessage<Item> | undefined
+  ): boolean {
+    return proto3.util.equals(Item, a, b)
   }
 }
 
@@ -390,87 +418,90 @@ export class UnitOptionValue extends Message<UnitOptionValue> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string userArmyUnitId = 2;
    */
-  userArmyUnitId = "";
+  userArmyUnitId = ''
 
   /**
    * @generated from field: string userArmyUnitName = 3;
    */
-  userArmyUnitName = "";
+  userArmyUnitName = ''
 
   /**
    * @generated from field: string unitOptionId = 4;
    */
-  unitOptionId = "";
+  unitOptionId = ''
 
   /**
    * @generated from field: string unitOptionName = 5;
    */
-  unitOptionName = "";
+  unitOptionName = ''
 
   /**
    * @generated from field: bool isSelected = 6;
    */
-  isSelected = false;
+  isSelected = false
 
   /**
    * @generated from field: string indexSelected = 7;
    */
-  indexSelected = "";
+  indexSelected = ''
 
   /**
    * @generated from field: repeated string idsSelected = 8;
    */
-  idsSelected: string[] = [];
+  idsSelected: string[] = []
 
   /**
    * @generated from field: int64 qtySelected = 9;
    */
-  qtySelected = protoInt64.zero;
+  qtySelected = protoInt64.zero
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 10;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   constructor(data?: PartialMessage<UnitOptionValue>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UnitOptionValue";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.UnitOptionValue'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "userArmyUnitId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "userArmyUnitName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "unitOptionId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "unitOptionName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "isSelected", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 7, name: "indexSelected", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "idsSelected", kind: "scalar", T: 9 /* ScalarType.STRING */, repeated: true },
-    { no: 9, name: "qtySelected", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 10, name: "createdAt", kind: "message", T: Timestamp },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'userArmyUnitId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'userArmyUnitName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'unitOptionId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'unitOptionName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'isSelected', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+    { no: 7, name: 'indexSelected', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: 'idsSelected', kind: 'scalar', T: 9 /* ScalarType.STRING */, repeated: true },
+    { no: 9, name: 'qtySelected', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: 'createdAt', kind: 'message', T: Timestamp }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitOptionValue {
-    return new UnitOptionValue().fromBinary(bytes, options);
+    return new UnitOptionValue().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnitOptionValue {
-    return new UnitOptionValue().fromJson(jsonValue, options);
+    return new UnitOptionValue().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnitOptionValue {
-    return new UnitOptionValue().fromJsonString(jsonString, options);
+    return new UnitOptionValue().fromJsonString(jsonString, options)
   }
 
-  static equals(a: UnitOptionValue | PlainMessage<UnitOptionValue> | undefined, b: UnitOptionValue | PlainMessage<UnitOptionValue> | undefined): boolean {
-    return proto3.util.equals(UnitOptionValue, a, b);
+  static equals(
+    a: UnitOptionValue | PlainMessage<UnitOptionValue> | undefined,
+    b: UnitOptionValue | PlainMessage<UnitOptionValue> | undefined
+  ): boolean {
+    return proto3.util.equals(UnitOptionValue, a, b)
   }
 }
 
@@ -481,99 +512,102 @@ export class UnitTypeOption extends Message<UnitTypeOption> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string unitTypeId = 2;
    */
-  unitTypeId = "";
+  unitTypeId = ''
 
   /**
    * @generated from field: string unitTypeName = 3;
    */
-  unitTypeName = "";
+  unitTypeName = ''
 
   /**
    * @generated from field: string unitOptionTypeId = 4;
    */
-  unitOptionTypeId = "";
+  unitOptionTypeId = ''
 
   /**
    * @generated from field: string unitOptionTypeName = 5;
    */
-  unitOptionTypeName = "";
+  unitOptionTypeName = ''
 
   /**
    * @generated from field: string txt = 6;
    */
-  txt = "";
+  txt = ''
 
   /**
    * @generated from field: int64 points = 7;
    */
-  points = protoInt64.zero;
+  points = protoInt64.zero
 
   /**
    * @generated from field: bool perModel = 8;
    */
-  perModel = false;
+  perModel = false
 
   /**
    * @generated from field: int64 maxPoints = 9;
    */
-  maxPoints = protoInt64.zero;
+  maxPoints = protoInt64.zero
 
   /**
    * @generated from field: repeated unittypes.Item items = 10;
    */
-  items: Item[] = [];
+  items: Item[] = []
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 11;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   /**
    * @generated from field: unittypes.UnitOptionValue value = 12;
    */
-  value?: UnitOptionValue;
+  value: UnitOptionValue
 
   constructor(data?: PartialMessage<UnitTypeOption>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UnitTypeOption";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.UnitTypeOption'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "unitTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "unitTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "unitOptionTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "unitOptionTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "txt", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "points", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 8, name: "perModel", kind: "scalar", T: 8 /* ScalarType.BOOL */ },
-    { no: 9, name: "maxPoints", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 10, name: "items", kind: "message", T: Item, repeated: true },
-    { no: 11, name: "createdAt", kind: "message", T: Timestamp },
-    { no: 12, name: "value", kind: "message", T: UnitOptionValue },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'unitTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'unitTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'unitOptionTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'unitOptionTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'txt', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: 'points', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 8, name: 'perModel', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+    { no: 9, name: 'maxPoints', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 10, name: 'items', kind: 'message', T: Item, repeated: true },
+    { no: 11, name: 'createdAt', kind: 'message', T: Timestamp },
+    { no: 12, name: 'value', kind: 'message', T: UnitOptionValue }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitTypeOption {
-    return new UnitTypeOption().fromBinary(bytes, options);
+    return new UnitTypeOption().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnitTypeOption {
-    return new UnitTypeOption().fromJson(jsonValue, options);
+    return new UnitTypeOption().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnitTypeOption {
-    return new UnitTypeOption().fromJsonString(jsonString, options);
+    return new UnitTypeOption().fromJsonString(jsonString, options)
   }
 
-  static equals(a: UnitTypeOption | PlainMessage<UnitTypeOption> | undefined, b: UnitTypeOption | PlainMessage<UnitTypeOption> | undefined): boolean {
-    return proto3.util.equals(UnitTypeOption, a, b);
+  static equals(
+    a: UnitTypeOption | PlainMessage<UnitTypeOption> | undefined,
+    b: UnitTypeOption | PlainMessage<UnitTypeOption> | undefined
+  ): boolean {
+    return proto3.util.equals(UnitTypeOption, a, b)
   }
 }
 
@@ -584,123 +618,125 @@ export class UnitType extends Message<UnitType> {
   /**
    * @generated from field: string id = 1;
    */
-  id = "";
+  id = ''
 
   /**
    * @generated from field: string name = 2;
    */
-  name = "";
+  name = ''
 
   /**
    * @generated from field: string gameId = 3;
    */
-  gameId = "";
+  gameId = ''
 
   /**
    * @generated from field: string armyTypeId = 4;
    */
-  armyTypeId = "";
+  armyTypeId = ''
 
   /**
    * @generated from field: string armyTypeName = 5;
    */
-  armyTypeName = "";
+  armyTypeName = ''
 
   /**
    * @generated from field: string troopTypeId = 6;
    */
-  troopTypeId = "";
+  troopTypeId = ''
 
   /**
    * @generated from field: string troopTypeName = 7;
    */
-  troopTypeName = "";
+  troopTypeName = ''
 
   /**
    * @generated from field: string compositionTypeId = 8;
    */
-  compositionTypeId = "";
+  compositionTypeId = ''
 
   /**
    * @generated from field: string compositionTypeName = 9;
    */
-  compositionTypeName = "";
+  compositionTypeName = ''
 
   /**
    * @generated from field: int64 pointsPerModel = 10;
    */
-  pointsPerModel = protoInt64.zero;
+  pointsPerModel = protoInt64.zero
 
   /**
    * @generated from field: int64 minModels = 11;
    */
-  minModels = protoInt64.zero;
+  minModels = protoInt64.zero
 
   /**
    * @generated from field: int64 maxModels = 12;
    */
-  maxModels = protoInt64.zero;
+  maxModels = protoInt64.zero
 
   /**
    * @generated from field: repeated unittypes.UnitStatistic statistics = 13;
    */
-  statistics: UnitStatistic[] = [];
+  statistics: UnitStatistic[] = []
 
   /**
    * @generated from field: repeated unittypes.UnitTypeChild children = 14;
    */
-  children: UnitTypeChild[] = [];
+  children: UnitTypeChild[] = []
 
   /**
    * @generated from field: repeated unittypes.UnitTypeOption options = 15;
    */
-  options: UnitTypeOption[] = [];
+  options: UnitTypeOption[] = []
 
   /**
    * @generated from field: google.protobuf.Timestamp createdAt = 16;
    */
-  createdAt?: Timestamp;
+  createdAt?: Timestamp
 
   constructor(data?: PartialMessage<UnitType>) {
-    super();
-    proto3.util.initPartial(data, this);
+    super()
+    proto3.util.initPartial(data, this)
   }
 
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UnitType";
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'unittypes.UnitType'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "gameId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "armyTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "armyTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 6, name: "troopTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 7, name: "troopTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 8, name: "compositionTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 9, name: "compositionTypeName", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 10, name: "pointsPerModel", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 11, name: "minModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 12, name: "maxModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
-    { no: 13, name: "statistics", kind: "message", T: UnitStatistic, repeated: true },
-    { no: 14, name: "children", kind: "message", T: UnitTypeChild, repeated: true },
-    { no: 15, name: "options", kind: "message", T: UnitTypeOption, repeated: true },
-    { no: 16, name: "createdAt", kind: "message", T: Timestamp },
-  ]);
+    { no: 1, name: 'id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'name', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'gameId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'armyTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 5, name: 'armyTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 6, name: 'troopTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 7, name: 'troopTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: 'compositionTypeId', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: 'compositionTypeName', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 10, name: 'pointsPerModel', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 11, name: 'minModels', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 12, name: 'maxModels', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
+    { no: 13, name: 'statistics', kind: 'message', T: UnitStatistic, repeated: true },
+    { no: 14, name: 'children', kind: 'message', T: UnitTypeChild, repeated: true },
+    { no: 15, name: 'options', kind: 'message', T: UnitTypeOption, repeated: true },
+    { no: 16, name: 'createdAt', kind: 'message', T: Timestamp }
+  ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitType {
-    return new UnitType().fromBinary(bytes, options);
+    return new UnitType().fromBinary(bytes, options)
   }
 
   static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UnitType {
-    return new UnitType().fromJson(jsonValue, options);
+    return new UnitType().fromJson(jsonValue, options)
   }
 
   static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UnitType {
-    return new UnitType().fromJsonString(jsonString, options);
+    return new UnitType().fromJsonString(jsonString, options)
   }
 
-  static equals(a: UnitType | PlainMessage<UnitType> | undefined, b: UnitType | PlainMessage<UnitType> | undefined): boolean {
-    return proto3.util.equals(UnitType, a, b);
+  static equals(
+    a: UnitType | PlainMessage<UnitType> | undefined,
+    b: UnitType | PlainMessage<UnitType> | undefined
+  ): boolean {
+    return proto3.util.equals(UnitType, a, b)
   }
 }
-

@@ -1,5 +1,5 @@
 <script setup lang="tsx">
-import { reactive, ref, onMounted, computed } from 'vue'
+import { reactive, ref, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/stores/app'
 import { useRoute } from 'vue-router'
