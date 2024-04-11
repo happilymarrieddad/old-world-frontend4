@@ -15,14 +15,7 @@ const { authenticated, user } = storeToRefs(appStore)
   <div class="common-layout">
     <el-container>
       <el-header v-show="authenticated">
-        <el-menu
-          :default-active="activeIndex"
-          mode="horizontal"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-          :router="true"
-        >
+        <el-menu :default-active="activeIndex" mode="horizontal" :router="true">
           <el-menu-item default-active index="/">Wargame List Builder</el-menu-item>
           <el-sub-menu index="2">
             <template #title>Settings</template>
