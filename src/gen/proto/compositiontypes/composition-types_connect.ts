@@ -45,7 +45,7 @@ export const V1CompositionTypes = {
     updateCompositionType: {
       name: "UpdateCompositionType",
       I: UpdateCompositionTypeRequest,
-      O: CompositionType,
+      O: EmptyReply,
       kind: MethodKind.Unary,
     },
     /**

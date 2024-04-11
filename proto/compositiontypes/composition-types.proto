@@ -10,7 +10,7 @@ service V1CompositionTypes {
     rpc GetCompositionTypes(GetCompositionTypesRequest) returns (GetCompositionTypesReply) {}
     rpc GetCompositionType(GetCompositionTypeRequest) returns (CompositionType) {}
     rpc CreateCompositionType(CreateCompositionTypeRequest) returns (CompositionType) {}
-    rpc UpdateCompositionType(UpdateCompositionTypeRequest) returns (CompositionType) {}
+    rpc UpdateCompositionType(UpdateCompositionTypeRequest) returns (EmptyReply) {}
     rpc DeleteCompositionType(DeleteCompositionTypeRequest) returns (EmptyReply) {}
 }
 

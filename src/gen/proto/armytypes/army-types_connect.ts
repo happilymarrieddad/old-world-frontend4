@@ -45,7 +45,7 @@ export const V1ArmyTypes = {
     updateArmyType: {
       name: "UpdateArmyType",
       I: UpdateArmyTypeRequest,
-      O: ArmyType,
+      O: EmptyReply,
       kind: MethodKind.Unary,
     },
     /**

@@ -40,6 +40,60 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/armyTypes/EditView.vue')
     },
+    {
+      path: '/composition-types',
+      name: 'compositionTypesIndex',
+      meta: { auth: true },
+      component: () => import('../views/compositionTypes/IndexView.vue')
+    },
+    {
+      path: '/composition-types/:id',
+      name: 'compositionTypesEdit',
+      meta: { auth: true },
+      component: () => import('../views/compositionTypes/EditView.vue')
+    },
+    {
+      path: '/item-types',
+      name: 'itemTypesIndex',
+      meta: { auth: true },
+      component: () => import('../views/itemTypes/IndexView.vue')
+    },
+    {
+      path: '/item-types/:id',
+      name: 'itemTypesEdit',
+      meta: { auth: true },
+      component: () => import('../views/itemTypes/EditView.vue')
+    },
+    {
+      path: '/troop-types',
+      name: 'troopTypesIndex',
+      meta: { auth: true },
+      component: () => import('../views/troopTypes/IndexView.vue')
+    },
+    {
+      path: '/troop-types/:id',
+      name: 'troopTypesEdit',
+      meta: { auth: true },
+      component: () => import('../views/troopTypes/EditView.vue')
+    },
+    {
+      path: '/games/items',
+      name: 'gameItemsIndex',
+      meta: { auth: true },
+      component: () => import('../views/items/GameItemsIndexView.vue')
+    },
+    {
+      path: '/army-types/items',
+      name: 'armyTypeItemsIndex',
+      meta: { auth: true },
+      component: () => import('../views/items/ArmyItemsIndexView.vue')
+    },
+    {
+      path: '/games/:gameid/items/:id',
+      name: 'itemsEdit',
+      meta: { auth: true },
+      component: () => import('../views/items/EditItemView.vue')
+    },
 
     // User Armies
     {

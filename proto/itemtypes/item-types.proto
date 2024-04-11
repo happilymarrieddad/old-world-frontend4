@@ -10,7 +10,7 @@ service V1ItemTypes {
     rpc GetItemTypes(GetItemTypesRequest) returns (GetItemTypesReply) {}
     rpc GetItemType(GetItemTypeRequest) returns (ItemType) {}
     rpc CreateItemType(CreateItemTypeRequest) returns (ItemType) {}
-    rpc UpdateItemType(UpdateItemTypeRequest) returns (ItemType) {}
+    rpc UpdateItemType(UpdateItemTypeRequest) returns (EmptyReply) {}
     rpc DeleteItemType(DeleteItemTypeRequest) returns (EmptyReply) {}
 }
 

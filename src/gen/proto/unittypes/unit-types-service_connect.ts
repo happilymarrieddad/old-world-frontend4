@@ -46,7 +46,7 @@ export const V1UnitTypes = {
     updateUnitType: {
       name: "UpdateUnitType",
       I: UpdateUnitTypeRequest,
-      O: UnitType,
+      O: EmptyReply,
       kind: MethodKind.Unary,
     },
     /**

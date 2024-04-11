@@ -45,7 +45,7 @@ export const V1ItemTypes = {
     updateItemType: {
       name: "UpdateItemType",
       I: UpdateItemTypeRequest,
-      O: ItemType,
+      O: EmptyReply,
       kind: MethodKind.Unary,
     },
     /**

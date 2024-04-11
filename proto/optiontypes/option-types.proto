@@ -10,7 +10,7 @@ service V1OptionTypes {
     rpc GetOptionTypes(GetOptionTypesRequest) returns (GetOptionTypesReply) {}
     rpc GetOptionType(GetOptionTypeRequest) returns (OptionType) {}
     rpc CreateOptionType(CreateOptionTypeRequest) returns (OptionType) {}
-    rpc UpdateOptionType(UpdateOptionTypeRequest) returns (OptionType) {}
+    rpc UpdateOptionType(UpdateOptionTypeRequest) returns (EmptyReply) {}
     rpc DeleteOptionType(DeleteOptionTypeRequest) returns (EmptyReply) {}
 }
 

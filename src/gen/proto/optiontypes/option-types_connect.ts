@@ -45,7 +45,7 @@ export const V1OptionTypes = {
     updateOptionType: {
       name: "UpdateOptionType",
       I: UpdateOptionTypeRequest,
-      O: OptionType,
+      O: EmptyReply,
       kind: MethodKind.Unary,
     },
     /**

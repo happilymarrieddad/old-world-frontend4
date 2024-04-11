@@ -6,7 +6,8 @@ import {
   ArmyType,
   GetArmyTypeRequest,
   GetArmyTypesReply,
-  GetArmyTypesRequest
+  GetArmyTypesRequest,
+  UpdateArmyTypeRequest
 } from '@/gen/proto/armytypes/army-types_pb'
 import { useAppStore } from '@/stores/app'
 
@@ -60,5 +61,19 @@ export const useArmyTypesStore = defineStore('armytypes', () => {
     })
   }
 
-  return { getArmyTypes, getArmyType }
+  async function updateArmyType(id: string, name: string): Promise<string | undefined> {
+    return new Promise((resolve) => {
+      client
+        .updateArmyType(new UpdateArmyTypeRequest({ id, name, JWT: appStore.getToken() }))
+        .then(() => {
+          resolve(undefined)
+        })
+        .catch((err) => {
+          console.log(err)
+          resolve('unable to get army type by id')
+        })
+    })
+  }
+
+  return { getArmyTypes, getArmyType, updateArmyType }
 })

@@ -2,11 +2,38 @@
 # For details, see https://buf.build/docs/configuration/v1/buf-gen-yaml
 version: v1
 plugins:
+  # This will invoke protoc-gen-es and write output to src/gen
   - plugin: es
     out: src/gen
     opt:
+      # Add more plugin options here
       - target=ts
+  # This will invoke protoc-gen-connect-es
   - plugin: connect-es
     out: src/gen
     opt:
+      # Add more plugin options here
       - target=ts
+  - plugin: go
+    out: ../api3/pb
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: ../api3/pb
+    opt:
+      - paths=source_relative
+  - plugin: go
+    out: ../grpc-proxy/pb
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: ../grpc-proxy/pb
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: ../grpc-proxy/pb
+    opt:
+      - paths=source_relative
+      - generate_unbound_methods=true
+  - plugin: openapiv2
+    out: ../grpc-proxy/openapiv2

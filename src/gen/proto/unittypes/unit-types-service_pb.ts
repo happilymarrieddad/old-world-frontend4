@@ -8,6 +8,73 @@ import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
 import { UnitType } from "./types_pb.js";
 
 /**
+ * @generated from message unittypes.UpdateUnitTypeRequest
+ */
+export class UpdateUnitTypeRequest extends Message<UpdateUnitTypeRequest> {
+  /**
+   * @generated from field: string JWT = 1;
+   */
+  JWT = "";
+
+  /**
+   * @generated from field: string id = 2;
+   */
+  id = "";
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name = "";
+
+  /**
+   * @generated from field: int64 pointsPerModel = 4;
+   */
+  pointsPerModel = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 minModels = 5;
+   */
+  minModels = protoInt64.zero;
+
+  /**
+   * @generated from field: int64 maxModels = 6;
+   */
+  maxModels = protoInt64.zero;
+
+  constructor(data?: PartialMessage<UpdateUnitTypeRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "unittypes.UpdateUnitTypeRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "JWT", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: "pointsPerModel", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 5, name: "minModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 6, name: "maxModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUnitTypeRequest {
+    return new UpdateUnitTypeRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUnitTypeRequest {
+    return new UpdateUnitTypeRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUnitTypeRequest {
+    return new UpdateUnitTypeRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: UpdateUnitTypeRequest | PlainMessage<UpdateUnitTypeRequest> | undefined, b: UpdateUnitTypeRequest | PlainMessage<UpdateUnitTypeRequest> | undefined): boolean {
+    return proto3.util.equals(UpdateUnitTypeRequest, a, b);
+  }
+}
+
+/**
  * @generated from message unittypes.ArmyTypeIdRequest
  */
 export class ArmyTypeIdRequest extends Message<ArmyTypeIdRequest> {
@@ -322,67 +389,6 @@ export class CreateUnitTypeRequest extends Message<CreateUnitTypeRequest> {
 
   static equals(a: CreateUnitTypeRequest | PlainMessage<CreateUnitTypeRequest> | undefined, b: CreateUnitTypeRequest | PlainMessage<CreateUnitTypeRequest> | undefined): boolean {
     return proto3.util.equals(CreateUnitTypeRequest, a, b);
-  }
-}
-
-/**
- * @generated from message unittypes.UpdateUnitTypeRequest
- */
-export class UpdateUnitTypeRequest extends Message<UpdateUnitTypeRequest> {
-  /**
-   * @generated from field: string JWT = 1;
-   */
-  JWT = "";
-
-  /**
-   * @generated from field: string id = 2;
-   */
-  id = "";
-
-  /**
-   * @generated from field: string name = 3;
-   */
-  name = "";
-
-  /**
-   * @generated from field: string troopTypeId = 4;
-   */
-  troopTypeId = "";
-
-  /**
-   * @generated from field: string compositionTypeId = 5;
-   */
-  compositionTypeId = "";
-
-  constructor(data?: PartialMessage<UpdateUnitTypeRequest>) {
-    super();
-    proto3.util.initPartial(data, this);
-  }
-
-  static readonly runtime: typeof proto3 = proto3;
-  static readonly typeName = "unittypes.UpdateUnitTypeRequest";
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: "JWT", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: "name", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: "troopTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-    { no: 5, name: "compositionTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
-  ]);
-
-  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUnitTypeRequest {
-    return new UpdateUnitTypeRequest().fromBinary(bytes, options);
-  }
-
-  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): UpdateUnitTypeRequest {
-    return new UpdateUnitTypeRequest().fromJson(jsonValue, options);
-  }
-
-  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): UpdateUnitTypeRequest {
-    return new UpdateUnitTypeRequest().fromJsonString(jsonString, options);
-  }
-
-  static equals(a: UpdateUnitTypeRequest | PlainMessage<UpdateUnitTypeRequest> | undefined, b: UpdateUnitTypeRequest | PlainMessage<UpdateUnitTypeRequest> | undefined): boolean {
-    return proto3.util.equals(UpdateUnitTypeRequest, a, b);
   }
 }
 

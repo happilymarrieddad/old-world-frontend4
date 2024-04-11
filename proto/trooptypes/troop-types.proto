@@ -10,8 +10,14 @@ service V1TroopTypes {
     rpc GetTroopTypes(GetTroopTypesRequest) returns (GetTroopTypesReply) {}
     rpc GetTroopType(GetTroopTypeRequest) returns (TroopType) {}
     rpc CreateTroopType(CreateTroopTypeRequest) returns (TroopType) {}
-    rpc UpdateTroopType(UpdateTroopTypeRequest) returns (TroopType) {}
     rpc DeleteTroopType(DeleteTroopTypeRequest) returns (EmptyReply) {}
+    rpc UpdateTroopType(UpdateTroopTypeRequest) returns (EmptyReply) {}
+}
+
+message UpdateTroopTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
 }
 
 message GetTroopTypeRequest {
@@ -35,12 +41,6 @@ message CreateTroopTypeRequest {
     string JWT = 1;
     string name = 2;
     string gameId = 3;
-}
-
-message UpdateTroopTypeRequest {
-    string JWT = 1;
-    string id = 2;
-    string name = 3;
 }
 
 message DeleteTroopTypeRequest {

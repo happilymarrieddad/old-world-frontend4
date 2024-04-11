@@ -10,7 +10,7 @@ service V1ArmyTypes {
     rpc GetArmyTypes(GetArmyTypesRequest) returns (GetArmyTypesReply) {}
     rpc GetArmyType(GetArmyTypeRequest) returns (ArmyType) {}
     rpc CreateArmyType(CreateArmyTypeRequest) returns (ArmyType) {}
-    rpc UpdateArmyType(UpdateArmyTypeRequest) returns (ArmyType) {}
+    rpc UpdateArmyType(UpdateArmyTypeRequest) returns (EmptyReply) {}
     rpc DeleteArmyType(DeleteArmyTypeRequest) returns (EmptyReply) {}
 }
 

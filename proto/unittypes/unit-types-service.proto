@@ -11,9 +11,18 @@ service V1UnitTypes {
     rpc GetUnitTypes(GetUnitTypesRequest) returns (GetUnitTypesReply) {}
     rpc GetUnitType(GetUnitTypeRequest) returns (unittypes.UnitType) {}
     rpc CreateUnitType(CreateUnitTypeRequest) returns (unittypes.UnitType) {}
-    rpc UpdateUnitType(UpdateUnitTypeRequest) returns (unittypes.UnitType) {}
+    rpc UpdateUnitType(UpdateUnitTypeRequest) returns (EmptyReply) {}
     rpc DeleteUnitType(DeleteUnitTypeRequest) returns (EmptyReply) {}
     rpc GetBasicUnitTypesByArmyTypeID(ArmyTypeIdRequest) returns (ArmyTypeIdReply) {}
+}
+
+message UpdateUnitTypeRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
+    int64 pointsPerModel = 4;
+    int64 minModels = 5;
+    int64 maxModels = 6;
 }
 
 message ArmyTypeIdRequest {
@@ -54,14 +63,6 @@ message CreateUnitTypeRequest {
     int64 minModels = 8;
     int64 maxModels = 9;
     string unitTypeId = 10;
-}
-
-message UpdateUnitTypeRequest {
-    string JWT = 1;
-    string id = 2;
-    string name = 3;
-    string troopTypeId = 4;
-    string compositionTypeId = 5;
 }
 
 message EmptyReply {

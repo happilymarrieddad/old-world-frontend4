@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package items;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/items";
+
+message Item {
+    string id = 1;
+    string name = 2;
+    int64 points = 3;
+    string itemTypeId = 4;
+    string itemTypeName = 5;
+    string gameId = 6;
+    string armyTypeId = 7;
+    string description = 8;
+    string story = 9;
+    google.protobuf.Timestamp createdAt = 10;
+    google.protobuf.Timestamp updatedAt = 11;
+}
+
+message CreateGameItem {
+    string name = 1;
+    int64 points = 2;
+    string gameId = 3;
+    string itemTypeId = 4;
+    string description = 5;
+    string story = 6;
+}
+
+message CreateArmyItem {
+    string name = 1;
+    int64 points = 2;
+    string gameId = 3;
+    string armyTypeId = 4;
+    string itemTypeId = 5;
+    string description = 6;
+    string story = 7;
+}
+
+message UpdateItem {
+    string id = 1;
+    string name = 2;
+    int64 points = 3;
+    string description = 4;
+    string story = 5;
+}
+
+message EmptyReply {
+}

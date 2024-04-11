@@ -10,6 +10,13 @@ service V1Games {
     rpc GetGames(GetGamesRequest) returns (GetGamesReply) {}
     rpc CreateGame(CreateGameRequest) returns (EmptyReply) {}
     rpc DeleteGame(DeleteGameRequest) returns (EmptyReply) {}
+    rpc UpdateGame(UpdateGameRequest) returns (EmptyReply) {}
+}
+
+message UpdateGameRequest {
+    string JWT = 1;
+    string id = 2;
+    string name = 3;
 }
 
 message GetGamesRequest {

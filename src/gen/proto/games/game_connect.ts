@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateGameRequest, DeleteGameRequest, EmptyReply, GetGamesReply, GetGamesRequest } from "./game_pb.js";
+import { CreateGameRequest, DeleteGameRequest, EmptyReply, GetGamesReply, GetGamesRequest, UpdateGameRequest } from "./game_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -36,6 +36,15 @@ export const V1Games = {
     deleteGame: {
       name: "DeleteGame",
       I: DeleteGameRequest,
+      O: EmptyReply,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc games.V1Games.UpdateGame
+     */
+    updateGame: {
+      name: "UpdateGame",
+      I: UpdateGameRequest,
       O: EmptyReply,
       kind: MethodKind.Unary,
     },

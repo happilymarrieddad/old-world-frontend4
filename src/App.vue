@@ -27,18 +27,18 @@ const { authenticated, user } = storeToRefs(appStore)
           <el-sub-menu index="2">
             <template #title>Settings</template>
             <el-menu-item index="/games">Games</el-menu-item>
-            <el-menu-item index="/items">Items (Not Implemented)</el-menu-item>
+            <el-menu-item index="/games/items">Game Items</el-menu-item>
             <el-sub-menu index="2-1">
               <template #title>Types</template>
               <el-menu-item index="/army-types">Army</el-menu-item>
-              <el-menu-item index="/composition-types">Composition (Not Implemented)</el-menu-item>
-              <el-menu-item index="/troop-types">Troop (Not Implemented)</el-menu-item>
-              <el-menu-item index="/item-types">Item (Not Implemented)</el-menu-item>
+              <el-menu-item index="/composition-types">Composition</el-menu-item>
+              <el-menu-item index="/troop-types">Troop</el-menu-item>
+              <el-menu-item index="/item-types">Item</el-menu-item>
             </el-sub-menu>
             <el-sub-menu index="2-2">
               <template #title>Armies</template>
-              <el-menu-item index="/army-units">Units (Not Implemented)</el-menu-item>
-              <el-menu-item index="/army-items">Items (Not Implemented)</el-menu-item>
+              <el-menu-item index="/army-units" disabled>Units (Not Implemented)</el-menu-item>
+              <el-menu-item index="/army-types/items">Items</el-menu-item>
             </el-sub-menu>
           </el-sub-menu>
           <el-menu-item default-active index="/user-armies">Your Armies</el-menu-item>

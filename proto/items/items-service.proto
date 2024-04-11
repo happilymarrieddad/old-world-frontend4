@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package items;
+
+import "google/protobuf/timestamp.proto";
+import "proto/items/types.proto";
+
+option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/items";
+
+service V1Items {
+    rpc GetGameItems(GetGameItemsRequest) returns (GetItemsReply) {}
+    rpc GetArmyItems(GetArmyItemsRequest) returns (GetItemsReply) {}
+    rpc GetItem(GetItemRequest) returns (GetItemReply) {}
+    rpc CreateItem(CreateItemRequest) returns (items.EmptyReply) {}
+    rpc UpdateItem(UpdateItemRequest) returns (items.EmptyReply) {}
+}
+
+message CreateItemRequest {
+    string JWT = 1;
+    items.CreateArmyItem item = 2;
+}
+
+message UpdateItemRequest {
+    string JWT = 1;
+    items.UpdateItem item = 2;
+}
+
+message GetItemRequest {
+    string JWT = 1;
+    string id = 2;
+    string gameId = 3;
+}
+
+message GetGameItemsRequest {
+    string JWT = 1;
+    string gameId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetArmyItemsRequest {
+    string JWT = 1;
+    string armyTypeId = 2;
+    int64 limit = 3;
+    int64 offset = 4;
+}
+
+message GetItemsReply {
+   repeated items.Item items = 1;
+}
+
+message GetItemReply {
+    items.Item item = 1;
+}

@@ -29,7 +29,7 @@ const columns = ref<any>([
     title: 'Options',
     cellRenderer: (data: any) => (
       <>
-        <ElLink underline={false} icon={Edit} href={`/army-types/${data.cellData}`} disabled>
+        <ElLink underline={false} icon={Edit} href={`/army-types/${data.cellData}`}>
           Edit
         </ElLink>
       </>

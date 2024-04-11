@@ -40,20 +40,20 @@ export const V1TroopTypes = {
       kind: MethodKind.Unary,
     },
     /**
-     * @generated from rpc trooptypes.V1TroopTypes.UpdateTroopType
-     */
-    updateTroopType: {
-      name: "UpdateTroopType",
-      I: UpdateTroopTypeRequest,
-      O: TroopType,
-      kind: MethodKind.Unary,
-    },
-    /**
      * @generated from rpc trooptypes.V1TroopTypes.DeleteTroopType
      */
     deleteTroopType: {
       name: "DeleteTroopType",
       I: DeleteTroopTypeRequest,
+      O: EmptyReply,
+      kind: MethodKind.Unary,
+    },
+    /**
+     * @generated from rpc trooptypes.V1TroopTypes.UpdateTroopType
+     */
+    updateTroopType: {
+      name: "UpdateTroopType",
+      I: UpdateTroopTypeRequest,
       O: EmptyReply,
       kind: MethodKind.Unary,
     },
