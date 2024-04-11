@@ -38,6 +38,7 @@ const columns = ref<any>([
 ])
 
 async function getGameData() {
+  appStore.loading = true
   const [gms, , err] = await gamesStore.getGames(500, 0)
   if (err) {
     ElMessage.error(err)
@@ -49,9 +50,11 @@ async function getGameData() {
     selectedGameId.value = games.value[0].id
     selectedGameName.value = games.value[0].name
   }
+  appStore.loading = false
 }
 
 async function getItemTypeData() {
+  appStore.loading = true
   const [ats, , err] = await itemTypeStore.getItemTypes(selectedGameId.value, 500, 0)
   if (err) {
     ElMessage.error(err)
@@ -59,6 +62,7 @@ async function getItemTypeData() {
   }
 
   itemTypes.value = ats as ItemType[]
+  appStore.loading = false
 }
 
 onMounted(async () => {

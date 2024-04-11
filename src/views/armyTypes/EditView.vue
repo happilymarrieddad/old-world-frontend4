@@ -30,6 +30,7 @@ const save = async function () {
 }
 
 onMounted(async () => {
+  appStore.loading = true
   const [res, err] = await armyTypeStore.getArmyType(route.params.id as string)
   if (err) {
     ElMessage.error(err)
@@ -38,6 +39,7 @@ onMounted(async () => {
 
   const armyType = res as ArmyType
   form.name = armyType.name
+  appStore.loading = false
 })
 </script>
 

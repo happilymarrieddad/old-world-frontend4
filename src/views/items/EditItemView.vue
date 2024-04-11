@@ -44,6 +44,7 @@ const save = async function () {
 }
 
 async function getItemData() {
+  appStore.loading = true
   const [res, err] = await itemStore.getItem(
     route.params.gameid as string,
     route.params.id as string
@@ -63,6 +64,7 @@ async function getItemData() {
   if (form.armyTypeId.length > 0) {
     path.value = '/army-types'
   }
+  appStore.loading = false
 }
 
 onMounted(async () => {

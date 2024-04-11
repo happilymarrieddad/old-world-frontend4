@@ -154,7 +154,6 @@ const router = createRouter({
 
 router.beforeEach(async (to, from, next) => {
   const store = useAppStore()
-  store.loading = true
   const authRequired = to && to.meta && to.meta.auth
   await delay(0.25)
 
@@ -187,8 +186,7 @@ router.beforeEach(async (to, from, next) => {
 })
 
 router.afterEach(async () => {
-  await delay(0.25)
-  useAppStore().loading = false
+  await delay(0.05)
 })
 
 export default router

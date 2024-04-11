@@ -18,6 +18,7 @@ const columns = ref<any>([
 ])
 
 async function getData() {
+  appStore.loading = true
   const [gms, , err] = await gamesStore.getGames(10000, 0)
   if (err) {
     ElMessage.error(err)
@@ -25,6 +26,7 @@ async function getData() {
   }
 
   games.value = gms as Game[]
+  appStore.loading = false
 }
 
 onMounted(async () => {

@@ -44,6 +44,7 @@ const columns = ref<any>([
 ])
 
 async function getUserArmyData() {
+  appStore.loading = true
   const [res, , err] = await userArmiesStore.getUserArmies(999, 0)
   if (err) {
     ElMessage.error(err)
@@ -51,6 +52,7 @@ async function getUserArmyData() {
   }
 
   userArmies.value = res as UserArmy[]
+  appStore.loading = false
 }
 
 onMounted(async () => {

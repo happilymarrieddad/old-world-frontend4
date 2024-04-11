@@ -30,6 +30,7 @@ const save = async function () {
 }
 
 onMounted(async () => {
+  appStore.loading = true
   const [res, err] = await compositionTypeStore.getCompositionType(route.params.id as string)
   if (err) {
     ElMessage.error(err)
@@ -38,6 +39,7 @@ onMounted(async () => {
 
   const compositionType = res as CompositionType
   form.name = compositionType.name
+  appStore.loading = false
 })
 </script>
 

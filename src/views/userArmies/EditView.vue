@@ -45,6 +45,7 @@ async function reset() {
 }
 
 async function getData() {
+  appStore.loading = true
   const [res, err] = await userArmyStore.getUserArmy(route.params.id as string)
   if (err) {
     ElMessage.error(err)
@@ -62,6 +63,8 @@ async function getData() {
   form.gameName = existingUserArmy.gameName
   form.armyTypeName = existingUserArmy.armyTypeName
   form.units = existingUserArmy.units
+
+  appStore.loading = false
 }
 
 async function addUnit() {

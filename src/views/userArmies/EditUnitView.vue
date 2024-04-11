@@ -84,7 +84,6 @@ const calculatePoints = async function () {
     }
   }
 
-  console.log('calculatePoints: ', form.points)
   form.points = pts
 }
 
@@ -122,6 +121,8 @@ async function getUserUnitData() {
   form.quantity = Number(userArmyUnit.value.quantity)
   form.options = userArmyUnit.value.unitType?.options as UnitTypeOption[]
   form.points = Number(userArmyUnit.value.points)
+  form.minModels = Number(userArmyUnit.value.unitType?.minModels)
+  form.maxModels = Number(userArmyUnit.value.unitType?.maxModels)
 }
 
 onMounted(async () => {
@@ -163,8 +164,16 @@ onMounted(async () => {
             <el-form-item label="Points">
               <el-input v-model="form.points" disabled />
             </el-form-item>
-            <el-form-item v-if="form.maxModels > 1" label="Num Models">
-              <el-input v-model="form.quantity" type="number" />
+            <el-form-item
+              :label="'Num Models - ' + userArmyUnit?.unitType?.pointsPerModel + ' pts per model'"
+              v-if="form.maxModels > 1"
+            >
+              <el-input
+                v-model="form.quantity"
+                :min="form.minModels"
+                :max="form.maxModels"
+                @change="calculatePoints"
+              />
             </el-form-item>
             <el-form-item>
               <el-button type="primary" @click="save">Save</el-button>
@@ -182,7 +191,14 @@ onMounted(async () => {
           <table :width="width">
             <tbody>
               <tr v-for="(option, index) in form.options" :key="index">
-                <td v-html="option.txt"></td>
+                <td
+                  v-html="
+                    option.txt +
+                    (option.points > 0
+                      ? ' (' + option.points + 'pts' + (option.perModel ? ' per model)' : ')')
+                      : '')
+                  "
+                ></td>
                 <td>
                   <div style="display: flex; align-items: center">
                     <div v-if="option.unitOptionTypeName == 'Single'">

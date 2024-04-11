@@ -40,6 +40,7 @@ async function add() {
 }
 
 async function getUnitTypes() {
+  appStore.loading = true
   const [res, err] = await unitTypeStore.getUnitTypeNamesFromArmyTypeId(userArmyTypeId.value)
   if (err) {
     ElMessage.error(err)
@@ -47,9 +48,11 @@ async function getUnitTypes() {
   }
 
   unitTypes.value = res as UnitType[]
+  appStore.loading = false
 }
 
 onMounted(async () => {
+  appStore.loading = true
   const [res, err] = await userArmyStore.getUserArmy(route.params.id as string)
   if (err) {
     ElMessage.error(err)

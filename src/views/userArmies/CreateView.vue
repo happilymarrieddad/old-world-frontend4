@@ -51,6 +51,7 @@ async function create() {
 }
 
 async function getGameData() {
+  appStore.loading = true
   const [gms, , err] = await gamesStore.getGames(500, 0)
   if (err) {
     ElMessage.error(err)
@@ -61,9 +62,11 @@ async function getGameData() {
   if (games.value.length > 0) {
     form.gameId = games.value[0].id
   }
+  appStore.loading = false
 }
 
 async function getArmyTypeData() {
+  appStore.loading = true
   const [ats, , err] = await armyTypeStore.getArmyTypes(form.gameId, 500, 0)
   if (err) {
     ElMessage.error(err)
@@ -74,6 +77,7 @@ async function getArmyTypeData() {
   if (armyTypes.value.length > 0) {
     form.armyTypeId = armyTypes.value[0].id
   }
+  appStore.loading = false
 }
 
 onMounted(async () => {
