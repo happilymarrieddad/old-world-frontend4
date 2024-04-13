@@ -5,7 +5,7 @@
 
 import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialMessage, PlainMessage } from "@bufbuild/protobuf";
 import { Message, proto3, protoInt64 } from "@bufbuild/protobuf";
-import { UnitType } from "./types_pb.js";
+import { UnitStatistic, UnitType } from "./types_pb.js";
 
 /**
  * @generated from message unittypes.UpdateUnitTypeRequest
@@ -41,6 +41,21 @@ export class UpdateUnitTypeRequest extends Message<UpdateUnitTypeRequest> {
    */
   maxModels = protoInt64.zero;
 
+  /**
+   * @generated from field: string troopTypeId = 7;
+   */
+  troopTypeId = "";
+
+  /**
+   * @generated from field: string compositionTypeId = 8;
+   */
+  compositionTypeId = "";
+
+  /**
+   * @generated from field: repeated unittypes.UnitStatistic statistics = 9;
+   */
+  statistics: UnitStatistic[] = [];
+
   constructor(data?: PartialMessage<UpdateUnitTypeRequest>) {
     super();
     proto3.util.initPartial(data, this);
@@ -55,6 +70,9 @@ export class UpdateUnitTypeRequest extends Message<UpdateUnitTypeRequest> {
     { no: 4, name: "pointsPerModel", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 5, name: "minModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 6, name: "maxModels", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
+    { no: 7, name: "troopTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 8, name: "compositionTypeId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 9, name: "statistics", kind: "message", T: UnitStatistic, repeated: true },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UpdateUnitTypeRequest {

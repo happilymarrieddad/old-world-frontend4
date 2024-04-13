@@ -84,6 +84,7 @@ const unitColumns = ref<any>([
     title: 'Type'
   },
   { key: 'name', dataKey: 'unitType.name', width: 300, title: 'Unit Name' },
+  { key: 'quantity', dataKey: 'quantity', width: 80, title: 'Qty' },
   { key: 'points', dataKey: 'points', width: 80, title: 'Points' },
   { key: 'troopTypeName', dataKey: 'unitType.troopTypeName', width: 300, title: 'Troop Type' },
   {

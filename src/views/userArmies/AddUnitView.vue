@@ -89,7 +89,7 @@ onMounted(async () => {
                 <el-option
                   v-for="ut in unitTypes"
                   :key="ut.id"
-                  :label="`${ut.compositionTypeName} - ${ut.name} - (${ut.pointsPerModel * ut.minModels}pts${ut.maxModels > 1 ? ' per model (min:' + ut.minModels + ')' : ''})`"
+                  :label="`${ut.compositionTypeName} - ${ut.name} - (${ut.pointsPerModel}pts${ut.maxModels > 1 ? ' per model (min:' + ut.minModels + ')' : ''})`"
                   :value="ut.id"
                 />
               </el-select>

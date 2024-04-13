@@ -23,6 +23,9 @@ message UpdateUnitTypeRequest {
     int64 pointsPerModel = 4;
     int64 minModels = 5;
     int64 maxModels = 6;
+    string troopTypeId = 7;
+    string compositionTypeId = 8;
+    repeated unittypes.UnitStatistic statistics = 9;
 }
 
 message ArmyTypeIdRequest {

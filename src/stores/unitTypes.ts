@@ -4,13 +4,15 @@ import {
   GetUnitTypesReply,
   CreateUnitTypeRequest,
   ArmyTypeIdRequest,
-  ArmyTypeIdReply
+  ArmyTypeIdReply,
+  GetUnitTypeRequest,
+  UpdateUnitTypeRequest
 } from '@/gen/proto/unittypes/unit-types-service_pb'
 import { V1UnitTypes } from '@/gen/proto/unittypes/unit-types-service_connect'
 import { createPromiseClient } from '@connectrpc/connect'
 import transport from '@/models/transport'
 import { useAppStore } from '@/stores/app'
-import type { UnitType } from '@/gen/proto/unittypes/types_pb'
+import { DeleteUnitTypeRequest, type UnitType } from '@/gen/proto/unittypes/types_pb'
 
 const client = createPromiseClient(V1UnitTypes, transport)
 
@@ -44,10 +46,11 @@ export const useUnitTypesStore = defineStore('unitTypes', () => {
     })
   }
 
-  async function createUnitType(armyTypeId: string, name: string): Promise<string | undefined> {
+  async function createUnitType(req: CreateUnitTypeRequest): Promise<string | undefined> {
     return new Promise((resolve) => {
+      req.JWT = astore.getToken()
       client
-        .createUnitType(new CreateUnitTypeRequest({ armyTypeId, name, JWT: astore.getToken() }))
+        .createUnitType(req)
         .then(() => {
           resolve(undefined)
         })
@@ -77,9 +80,54 @@ export const useUnitTypesStore = defineStore('unitTypes', () => {
     })
   }
 
+  async function getUnitType(id: string): Promise<[UnitType | undefined, string | undefined]> {
+    return new Promise((resolve) => {
+      client
+        .getUnitType(new GetUnitTypeRequest({ JWT: astore.getToken(), id }))
+        .then((data) => {
+          const res = data as UnitType
+          resolve([res, undefined])
+        })
+        .catch((err) => {
+          console.log(err)
+          resolve([undefined, 'unable to get unit type'])
+        })
+    })
+  }
+
+  async function destroyUnitType(id: string): Promise<string | undefined> {
+    return new Promise((resolve) => {
+      client
+        .deleteUnitType(new DeleteUnitTypeRequest({ JWT: astore.getToken(), id }))
+        .then(() => resolve(undefined))
+        .catch((err) => {
+          console.log(err)
+          resolve('unable to destroy unit type')
+        })
+    })
+  }
+
+  async function updateUnitType(req: UpdateUnitTypeRequest): Promise<string | undefined> {
+    return new Promise((resolve) => {
+      req.JWT = astore.getToken()
+      client
+        .updateUnitType(req)
+        .then(() => {
+          resolve(undefined)
+        })
+        .catch((err) => {
+          console.log(err)
+          resolve('unable to update unit type')
+        })
+    })
+  }
+
   return {
     getUnitTypes,
     createUnitType,
-    getUnitTypeNamesFromArmyTypeId
+    getUnitTypeNamesFromArmyTypeId,
+    getUnitType,
+    destroyUnitType,
+    updateUnitType
   }
 })

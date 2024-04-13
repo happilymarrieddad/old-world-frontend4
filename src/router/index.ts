@@ -132,6 +132,30 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/userArmies/EditUnitView.vue')
     },
+    {
+      path: '/unit-types',
+      name: 'unitTypesIndex',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/IndexView.vue')
+    },
+    {
+      path: '/unit-types/create',
+      name: 'unitTypesCreate',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/CreateView.vue')
+    },
+    {
+      path: '/unit-types/edit/:id',
+      name: 'unitTypesEdit',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/EditView.vue')
+    },
+    {
+      path: '/unit-types/destroy/:id',
+      name: 'unitTypesDestroy',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/DeleteView.vue')
+    },
 
     // Auth
     { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },

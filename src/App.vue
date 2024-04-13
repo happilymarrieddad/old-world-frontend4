@@ -30,7 +30,7 @@ const { authenticated, user } = storeToRefs(appStore)
             </el-sub-menu>
             <el-sub-menu index="2-2">
               <template #title>Armies</template>
-              <el-menu-item index="/army-units" disabled>Units (Not Implemented)</el-menu-item>
+              <el-menu-item index="/unit-types">Units</el-menu-item>
               <el-menu-item index="/army-types/items">Items</el-menu-item>
             </el-sub-menu>
           </el-sub-menu>

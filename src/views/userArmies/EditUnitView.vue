@@ -88,6 +88,8 @@ const calculatePoints = async function () {
 }
 
 async function save() {
+  ElMessage.info('attempting to save unit edits')
+  appStore.loading = true
   const req = new UpdateUserArmyUnit({
     id: route.params.armyunitid as string,
     qty: { value: BigInt(form.quantity), case: 'qtyValue' },
@@ -104,11 +106,14 @@ async function save() {
     return
   }
 
+  appStore.loading = false
   ElMessage.success('Successfully updated user army unit')
   router.push(`/user-armies/edit/${route.params.userarmyid as string}`)
 }
 
 async function getUserUnitData() {
+  ElMessage.info('getting user unit data')
+  appStore.loading = true
   const [ua, err] = await userUnitStore.getUnit(route.params.armyunitid as string)
   if (err) {
     ElMessage.error(err)
@@ -123,9 +128,12 @@ async function getUserUnitData() {
   form.points = Number(userArmyUnit.value.points)
   form.minModels = Number(userArmyUnit.value.unitType?.minModels)
   form.maxModels = Number(userArmyUnit.value.unitType?.maxModels)
+  appStore.loading = false
 }
 
 onMounted(async () => {
+  appStore.loading = true
+  ElMessage.info('getting edit user unit army data')
   const [res, err] = await userArmyStore.getUserArmy(route.params.userarmyid as string)
   if (err) {
     ElMessage.error(err)
@@ -149,7 +157,7 @@ onMounted(async () => {
         :to="{ path: `/user-armies/edit/${route.params.userarmyid as string}` }"
         >{{ userArmyName }}</el-breadcrumb-item
       >
-      <el-breadcrumb-item>Add Unit</el-breadcrumb-item>
+      <el-breadcrumb-item>Edit Unit</el-breadcrumb-item>
     </el-breadcrumb>
     <br />
     <br />
@@ -268,7 +276,12 @@ onMounted(async () => {
                       </el-select>
                     </div>
                     <div v-if="option.unitOptionTypeName == 'Many To'">
-                      <el-input v-model="option.value.qtySelected" type="number" min="0" />
+                      <el-input
+                        v-model="option.value.qtySelected"
+                        type="number"
+                        min="0"
+                        @change="calculatePoints"
+                      />
                     </div>
                   </div>
                 </td>
