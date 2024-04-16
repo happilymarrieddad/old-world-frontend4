@@ -67,6 +67,7 @@ async function getGameData() {
 
 async function getArmyTypeData() {
   appStore.loading = true
+  form.armyTypeId = ''
   const [ats, , err] = await armyTypeStore.getArmyTypes(form.gameId, 500, 0)
   if (err) {
     ElMessage.error(err)

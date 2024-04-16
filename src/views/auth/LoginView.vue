@@ -20,6 +20,10 @@ async function login() {
 
   router.push('/')
 }
+
+async function register() {
+  router.push('/register')
+}
 </script>
 
 <template>
@@ -47,6 +51,7 @@ async function login() {
           <el-form-item>
             <el-button type="primary" @click="login">Login</el-button>
             <el-button>Cancel</el-button>
+            <el-button @click="register">Create New Account</el-button>
           </el-form-item>
         </el-form>
       </el-col>

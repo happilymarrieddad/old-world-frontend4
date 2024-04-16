@@ -7,8 +7,8 @@ import {
   LoginRequest,
   LoginReply,
   JWTRequest,
-  ValidateReply
-  //CreateUserRequest
+  ValidateReply,
+  CreateUserRequest
 } from '@/gen/proto/auth/auth_pb'
 import transport from '@/models/transport'
 import { type User } from '@/models/users'
@@ -94,6 +94,20 @@ export const useAppStore = defineStore('app', () => {
     })
   }
 
+  async function createUser(req: CreateUserRequest): Promise<string | undefined> {
+    return new Promise((resolve) => {
+      client
+        .createUser(req)
+        .then(() => {
+          return resolve(undefined)
+        })
+        .catch((err) => {
+          console.log(err)
+          resolve('unable to register new user')
+        })
+    })
+  }
+
   return {
     loading,
     authenticated,
@@ -103,6 +117,7 @@ export const useAppStore = defineStore('app', () => {
     login,
     setToken,
     getToken,
-    clearToken
+    clearToken,
+    createUser
   }
 })

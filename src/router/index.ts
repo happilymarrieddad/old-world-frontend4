@@ -156,6 +156,12 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/unitTypes/DeleteView.vue')
     },
+    {
+      path: '/games/create',
+      name: 'gamesCreate',
+      meta: { auth: true },
+      component: () => import('../views/games/CreateView.vue')
+    },
 
     // Auth
     { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },
@@ -165,6 +171,11 @@ const router = createRouter({
       name: 'profile',
       meta: { auth: true },
       component: () => import('../views/auth/ProfileView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/auth/RegisterView.vue')
     },
 
     // Last route

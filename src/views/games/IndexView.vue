@@ -5,6 +5,7 @@ import { Game } from '@/gen/proto/games/game_pb'
 import { useAppStore } from '@/stores/app'
 import { useGamesStore } from '@/stores/games'
 import { ElMessage } from 'element-plus'
+import { Plus } from '@element-plus/icons-vue'
 
 const appStore = useAppStore()
 const gamesStore = useGamesStore()
@@ -39,6 +40,9 @@ onMounted(async () => {
     <div class="games">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">Homepage</el-breadcrumb-item>
+        <el-breadcrumb-item :to="{ path: '/games/create' }">
+          <el-icon><Plus /></el-icon> Add Game
+        </el-breadcrumb-item>
         <el-breadcrumb-item>Games</el-breadcrumb-item>
       </el-breadcrumb>
     </div>

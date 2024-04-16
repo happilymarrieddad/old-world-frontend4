@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { createPromiseClient } from '@connectrpc/connect'
 import transport from '@/models/transport'
 import { V1Games } from '@/gen/proto/games/game_connect'
-import { Game, GetGamesReply, GetGamesRequest } from '@/gen/proto/games/game_pb'
+import { CreateGameRequest, Game, GetGamesReply, GetGamesRequest } from '@/gen/proto/games/game_pb'
 import { useAppStore } from '@/stores/app'
 
 const client = createPromiseClient(V1Games, transport)
@@ -34,5 +34,24 @@ export const useGamesStore = defineStore('games', () => {
     })
   }
 
-  return { getGames }
+  async function createGame(name: string): Promise<string | undefined> {
+    return new Promise((resolve) => {
+      client
+        .createGame(
+          new CreateGameRequest({
+            JWT: appStore.getToken(),
+            name
+          })
+        )
+        .then(() => {
+          return resolve(undefined)
+        })
+        .catch((err) => {
+          console.log(err)
+          resolve('unable to create a new game')
+        })
+    })
+  }
+
+  return { getGames, createGame }
 })
