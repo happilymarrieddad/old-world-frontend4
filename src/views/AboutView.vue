@@ -4,6 +4,9 @@
       <el-breadcrumb-item :to="{ path: '/' }">Homepage</el-breadcrumb-item>
       <el-breadcrumb-item>About</el-breadcrumb-item>
     </el-breadcrumb>
-    <h1>This is an about page</h1>
+    <h3>
+      This project is a work in progress. You can email me at
+      <email>wargamelistbuilder@gmail.com</email>
+    </h3>
   </div>
 </template>

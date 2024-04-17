@@ -4,8 +4,8 @@ import { storeToRefs } from 'pinia'
 import { Game } from '@/gen/proto/games/game_pb'
 import { useAppStore } from '@/stores/app'
 import { useGamesStore } from '@/stores/games'
-import { ElMessage } from 'element-plus'
-import { Plus } from '@element-plus/icons-vue'
+import { ElMessage, TableV2FixedDir, ElLink } from 'element-plus'
+import { Plus, Edit } from '@element-plus/icons-vue'
 
 const appStore = useAppStore()
 const gamesStore = useGamesStore()
@@ -15,7 +15,20 @@ const { loading } = storeToRefs(appStore)
 const games = ref<Game[]>([])
 const columns = ref<any>([
   { key: 'id', dataKey: 'id', width: 500, title: 'ID' },
-  { key: 'name', dataKey: 'name', width: 0, align: 'center', title: 'Name' }
+  { key: 'name', dataKey: 'name', width: 0, align: 'center', title: 'Name' },
+  {
+    dataKey: 'id',
+    width: 200,
+    fixed: TableV2FixedDir.RIGHT,
+    title: 'Options',
+    cellRenderer: (data: any) => (
+      <>
+        <ElLink underline={false} icon={Edit} href={`/games/${data.cellData}`}>
+          Edit
+        </ElLink>
+      </>
+    )
+  }
 ])
 
 async function getData() {

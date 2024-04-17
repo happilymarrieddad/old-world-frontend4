@@ -3,7 +3,7 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { CreateGameRequest, DeleteGameRequest, EmptyReply, GetGamesReply, GetGamesRequest, UpdateGameRequest } from "./game_pb.js";
+import { CreateGameRequest, DeleteGameRequest, EmptyReply, GetGameReply, GetGameRequest, GetGamesReply, GetGamesRequest, UpdateGameRequest } from "./game_pb.js";
 import { MethodKind } from "@bufbuild/protobuf";
 
 /**
@@ -12,6 +12,15 @@ import { MethodKind } from "@bufbuild/protobuf";
 export const V1Games = {
   typeName: "games.V1Games",
   methods: {
+    /**
+     * @generated from rpc games.V1Games.GetGame
+     */
+    getGame: {
+      name: "GetGame",
+      I: GetGameRequest,
+      O: GetGameReply,
+      kind: MethodKind.Unary,
+    },
     /**
      * @generated from rpc games.V1Games.GetGames
      */

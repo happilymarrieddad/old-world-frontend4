@@ -7,10 +7,20 @@ import "google/protobuf/timestamp.proto";
 option go_package = "github.com/happilymarrieddad/old-world/api3/pb/proto/games";
 
 service V1Games {
+    rpc GetGame(GetGameRequest) returns (GetGameReply) {}
     rpc GetGames(GetGamesRequest) returns (GetGamesReply) {}
     rpc CreateGame(CreateGameRequest) returns (EmptyReply) {}
     rpc DeleteGame(DeleteGameRequest) returns (EmptyReply) {}
     rpc UpdateGame(UpdateGameRequest) returns (EmptyReply) {}
+}
+
+message GetGameRequest {
+    string JWT = 1;
+    string id = 2;
+}
+
+message GetGameReply {
+    Game game = 1;
 }
 
 message UpdateGameRequest {

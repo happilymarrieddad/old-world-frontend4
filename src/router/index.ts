@@ -162,6 +162,12 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/games/CreateView.vue')
     },
+    {
+      path: '/games/:id',
+      name: 'gamesEdit',
+      meta: { auth: true },
+      component: () => import('../views/games/EditView.vue')
+    },
 
     // Auth
     { path: '/login', name: 'login', component: () => import('../views/auth/LoginView.vue') },

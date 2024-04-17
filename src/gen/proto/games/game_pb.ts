@@ -7,6 +7,86 @@ import type { BinaryReadOptions, FieldList, JsonReadOptions, JsonValue, PartialM
 import { Message, proto3, protoInt64, Timestamp } from "@bufbuild/protobuf";
 
 /**
+ * @generated from message games.GetGameRequest
+ */
+export class GetGameRequest extends Message<GetGameRequest> {
+  /**
+   * @generated from field: string JWT = 1;
+   */
+  JWT = "";
+
+  /**
+   * @generated from field: string id = 2;
+   */
+  id = "";
+
+  constructor(data?: PartialMessage<GetGameRequest>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "games.GetGameRequest";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "JWT", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: "id", kind: "scalar", T: 9 /* ScalarType.STRING */ },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGameRequest {
+    return new GetGameRequest().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGameRequest {
+    return new GetGameRequest().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGameRequest {
+    return new GetGameRequest().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetGameRequest | PlainMessage<GetGameRequest> | undefined, b: GetGameRequest | PlainMessage<GetGameRequest> | undefined): boolean {
+    return proto3.util.equals(GetGameRequest, a, b);
+  }
+}
+
+/**
+ * @generated from message games.GetGameReply
+ */
+export class GetGameReply extends Message<GetGameReply> {
+  /**
+   * @generated from field: games.Game game = 1;
+   */
+  game?: Game;
+
+  constructor(data?: PartialMessage<GetGameReply>) {
+    super();
+    proto3.util.initPartial(data, this);
+  }
+
+  static readonly runtime: typeof proto3 = proto3;
+  static readonly typeName = "games.GetGameReply";
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: "game", kind: "message", T: Game },
+  ]);
+
+  static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): GetGameReply {
+    return new GetGameReply().fromBinary(bytes, options);
+  }
+
+  static fromJson(jsonValue: JsonValue, options?: Partial<JsonReadOptions>): GetGameReply {
+    return new GetGameReply().fromJson(jsonValue, options);
+  }
+
+  static fromJsonString(jsonString: string, options?: Partial<JsonReadOptions>): GetGameReply {
+    return new GetGameReply().fromJsonString(jsonString, options);
+  }
+
+  static equals(a: GetGameReply | PlainMessage<GetGameReply> | undefined, b: GetGameReply | PlainMessage<GetGameReply> | undefined): boolean {
+    return proto3.util.equals(GetGameReply, a, b);
+  }
+}
+
+/**
  * @generated from message games.UpdateGameRequest
  */
 export class UpdateGameRequest extends Message<UpdateGameRequest> {

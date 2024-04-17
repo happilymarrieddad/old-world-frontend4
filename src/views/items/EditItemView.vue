@@ -76,7 +76,7 @@ onMounted(async () => {
   <div class="items-edit">
     <el-breadcrumb separator="/">
       <el-breadcrumb-item :to="{ path: '/' }">Homepage</el-breadcrumb-item>
-      <el-breadcrumb-item :to="{ path: '/items' }">Items</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{ path: `/games/items` }">Items</el-breadcrumb-item>
       <el-breadcrumb-item>{{ form.name }}</el-breadcrumb-item>
     </el-breadcrumb>
     <br />
