@@ -20,6 +20,7 @@ const { authenticated, user } = storeToRefs(appStore)
           <el-sub-menu index="2">
             <template #title>Settings</template>
             <el-menu-item index="/games">Games</el-menu-item>
+            <el-menu-item index="/games/statistics">Game Statistics</el-menu-item>
             <el-menu-item index="/games/items">Game Items</el-menu-item>
             <el-sub-menu index="2-1">
               <template #title>Types</template>

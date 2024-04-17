@@ -329,6 +329,11 @@ export class Statistic extends Message<Statistic> {
    */
   createdAt?: Timestamp;
 
+  /**
+   * @generated from field: int64 position = 6;
+   */
+  position = protoInt64.zero;
+
   constructor(data?: PartialMessage<Statistic>) {
     super();
     proto3.util.initPartial(data, this);
@@ -342,6 +347,7 @@ export class Statistic extends Message<Statistic> {
     { no: 3, name: "display", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 4, name: "gameId", kind: "scalar", T: 9 /* ScalarType.STRING */ },
     { no: 5, name: "createdAt", kind: "message", T: Timestamp },
+    { no: 6, name: "position", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): Statistic {

@@ -94,6 +94,60 @@ const router = createRouter({
       meta: { auth: true },
       component: () => import('../views/items/EditItemView.vue')
     },
+    {
+      path: '/games/create',
+      name: 'gamesCreate',
+      meta: { auth: true },
+      component: () => import('../views/games/CreateView.vue')
+    },
+    {
+      path: '/games/:id',
+      name: 'gamesEdit',
+      meta: { auth: true },
+      component: () => import('../views/games/EditView.vue')
+    },
+    {
+      path: '/unit-types',
+      name: 'unitTypesIndex',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/IndexView.vue')
+    },
+    {
+      path: '/unit-types/create',
+      name: 'unitTypesCreate',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/CreateView.vue')
+    },
+    {
+      path: '/unit-types/edit/:id',
+      name: 'unitTypesEdit',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/EditView.vue')
+    },
+    {
+      path: '/unit-types/destroy/:id',
+      name: 'unitTypesDestroy',
+      meta: { auth: true },
+      component: () => import('../views/unitTypes/DeleteView.vue')
+    },
+    {
+      path: '/games/statistics',
+      name: 'statisticsIndex',
+      meta: { auth: true },
+      component: () => import('../views/statistics/IndexView.vue')
+    },
+    {
+      path: '/statistics/:id',
+      name: 'statisticsEdit',
+      meta: { auth: true },
+      component: () => import('../views/statistics/EditView.vue')
+    },
+    {
+      path: '/statistics/create',
+      name: 'statisticsCreate',
+      meta: { auth: true },
+      component: () => import('../views/statistics/CreateView.vue')
+    },
 
     // User Armies
     {
@@ -131,42 +185,6 @@ const router = createRouter({
       name: 'userArmiesUnitEdit',
       meta: { auth: true },
       component: () => import('../views/userArmies/EditUnitView.vue')
-    },
-    {
-      path: '/unit-types',
-      name: 'unitTypesIndex',
-      meta: { auth: true },
-      component: () => import('../views/unitTypes/IndexView.vue')
-    },
-    {
-      path: '/unit-types/create',
-      name: 'unitTypesCreate',
-      meta: { auth: true },
-      component: () => import('../views/unitTypes/CreateView.vue')
-    },
-    {
-      path: '/unit-types/edit/:id',
-      name: 'unitTypesEdit',
-      meta: { auth: true },
-      component: () => import('../views/unitTypes/EditView.vue')
-    },
-    {
-      path: '/unit-types/destroy/:id',
-      name: 'unitTypesDestroy',
-      meta: { auth: true },
-      component: () => import('../views/unitTypes/DeleteView.vue')
-    },
-    {
-      path: '/games/create',
-      name: 'gamesCreate',
-      meta: { auth: true },
-      component: () => import('../views/games/CreateView.vue')
-    },
-    {
-      path: '/games/:id',
-      name: 'gamesEdit',
-      meta: { auth: true },
-      component: () => import('../views/games/EditView.vue')
     },
 
     // Auth

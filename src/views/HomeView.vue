@@ -5,7 +5,7 @@
     <el-breadcrumb separator="/">
       <el-breadcrumb-item>Homepage</el-breadcrumb-item>
     </el-breadcrumb>
-    <h1>Welcome to Wargamelistbuilder.com. v1.0.1</h1>
+    <h1>Welcome to Wargamelistbuilder.com. v1.1.0</h1>
     <h5>Currently, I am a single developer and this app is in heavy development.</h5>
     <h5>
       The purpose of the app is to allow table top game players to develop army lists easily. At the

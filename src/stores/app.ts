@@ -86,9 +86,10 @@ export const useAppStore = defineStore('app', () => {
           setUser(usr)
           resolve(undefined)
         })
-        .catch(() => {
+        .catch((err: any) => {
+          console.log(err)
           clearToken()
-          ElMessage.error('invalid credentials going to login page')
+          ElMessage.error('token has expired please login')
           resolve('unable to validate token')
         })
     })

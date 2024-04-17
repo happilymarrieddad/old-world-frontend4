@@ -6,9 +6,11 @@ import { useAppStore } from '@/stores/app'
 import { useGamesStore } from '@/stores/games'
 import { ElMessage, TableV2FixedDir, ElLink } from 'element-plus'
 import { Plus, Edit } from '@element-plus/icons-vue'
+import { useRouter } from 'vue-router'
 
 const appStore = useAppStore()
 const gamesStore = useGamesStore()
+const router = useRouter()
 
 const { loading } = storeToRefs(appStore)
 
@@ -43,6 +45,10 @@ async function getData() {
   appStore.loading = false
 }
 
+async function create() {
+  router.push('/games/create')
+}
+
 onMounted(async () => {
   await getData()
 })
@@ -53,12 +59,14 @@ onMounted(async () => {
     <div class="games">
       <el-breadcrumb separator="/">
         <el-breadcrumb-item :to="{ path: '/' }">Homepage</el-breadcrumb-item>
-        <el-breadcrumb-item :to="{ path: '/games/create' }">
-          <el-icon><Plus /></el-icon> Add Game
-        </el-breadcrumb-item>
         <el-breadcrumb-item>Games</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
+    <br />
+    <el-button type="success" @click.prevent="create"
+      ><el-icon><Plus /></el-icon> Create New</el-button
+    >
+    <br />
     <div style="height: 400px">
       <el-auto-resizer>
         <template #default="{ height, width }">
