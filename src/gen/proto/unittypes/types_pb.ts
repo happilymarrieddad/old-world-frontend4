@@ -569,6 +569,16 @@ export class UnitTypeOption extends Message<UnitTypeOption> {
    */
   value: UnitOptionValue
 
+  /**
+   * @generated from field: string displayOption = 13;
+   */
+  displayOption = ''
+
+  /**
+   * @generated from field: string displaySpecialRule = 14;
+   */
+  displaySpecialRule = ''
+
   constructor(data?: PartialMessage<UnitTypeOption>) {
     super()
     proto3.util.initPartial(data, this)
@@ -588,7 +598,9 @@ export class UnitTypeOption extends Message<UnitTypeOption> {
     { no: 9, name: 'maxPoints', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
     { no: 10, name: 'items', kind: 'message', T: Item, repeated: true },
     { no: 11, name: 'createdAt', kind: 'message', T: Timestamp },
-    { no: 12, name: 'value', kind: 'message', T: UnitOptionValue }
+    { no: 12, name: 'value', kind: 'message', T: UnitOptionValue },
+    { no: 13, name: 'displayOption', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 14, name: 'displaySpecialRule', kind: 'scalar', T: 9 /* ScalarType.STRING */ }
   ])
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UnitTypeOption {

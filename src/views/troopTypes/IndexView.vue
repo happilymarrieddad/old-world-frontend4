@@ -20,7 +20,6 @@ const troopTypes = ref<TroopType[]>([])
 const selectedGameId = ref('')
 const selectedGameName = ref('')
 const columns = ref<any>([
-  { key: 'id', dataKey: 'id', width: 300, title: 'ID' },
   { key: 'name', dataKey: 'name', width: 500, title: 'Name' },
   {
     dataKey: 'id',

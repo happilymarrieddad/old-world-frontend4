@@ -84,6 +84,8 @@ message UnitTypeOption {
     repeated Item items = 10;
     google.protobuf.Timestamp createdAt = 11;
     UnitOptionValue value = 12;
+    string displayOption = 13;
+    string displaySpecialRule = 14;
 }
 
 message UnitType {

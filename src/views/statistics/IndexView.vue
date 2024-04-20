@@ -22,7 +22,6 @@ const statistics = ref<Statistic[]>([])
 const selectedGameId = ref('')
 const selectedGameName = ref('')
 const columns = ref<any>([
-  { key: 'id', dataKey: 'id', width: 300, title: 'ID' },
   { key: 'name', dataKey: 'name', width: 500, title: 'Name' },
   { key: 'display', dataKey: 'display', width: 200, title: 'Display' },
   { key: 'position', dataKey: 'position', width: 50, title: 'Position' },

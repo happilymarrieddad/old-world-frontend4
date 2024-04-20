@@ -16,7 +16,6 @@ const { loading } = storeToRefs(appStore)
 
 const games = ref<Game[]>([])
 const columns = ref<any>([
-  { key: 'id', dataKey: 'id', width: 500, title: 'ID' },
   { key: 'name', dataKey: 'name', width: 0, align: 'center', title: 'Name' },
   {
     dataKey: 'id',
