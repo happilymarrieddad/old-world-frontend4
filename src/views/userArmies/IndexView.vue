@@ -17,6 +17,16 @@ const columns = ref<any>([
   { key: 'name', dataKey: 'name', width: 300, title: 'Name' },
   { key: 'gameName', dataKey: 'gameName', width: 200, title: 'Game' },
   { key: 'armyTypeName', dataKey: 'armyTypeName', width: 200, title: 'Army Type' },
+  {
+    dataKey: 'units',
+    width: 100,
+    title: 'Num',
+    cellRenderer: (data: any) => (
+      <>
+        <span>{data.cellData.length}</span>
+      </>
+    )
+  },
   { key: 'points', dataKey: 'points', width: 80, fixed: TableV2FixedDir.RIGHT, title: 'Points' },
   {
     dataKey: 'id',

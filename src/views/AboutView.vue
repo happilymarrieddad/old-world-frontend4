@@ -17,7 +17,14 @@
     </ol>
     <h5>Release History</h5>
     <ul>
-      <li>v1.1.0 - 4/17/24 Added CRUD for Statistics. Fixed a few bugs.</li>
+      <li>
+        v1.1.0 - 4/17/24
+        <ol>
+          <li>Added CRUD for Statistics.</li>
+          <li>Fixed a few bugs.</li>
+          <li>Added num of units for user armies.</li>
+        </ol>
+      </li>
       <li>v1.0.1 - 4/16/24 Fixing a few small bugs. Added ability to edit games.</li>
       <li>v1.0.0 - 4/12/24 Initial release. All basic functions are completed.</li>
     </ul>

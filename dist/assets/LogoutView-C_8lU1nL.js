@@ -1,1 +1,0 @@
-import{h as t,u as s,o as c,c as r,b as n}from"./index-J7TsvYTq.js";import{_ as a}from"./_plugin-vue_export-helper-DlAUqK2U.js";const u={setup(){const o=t(),e=s();setTimeout(()=>{e.clearToken(),o.push("/login")},250)}},_={class:"logout"},i=n("h1",null,"Logging out...",-1),p=[i];function l(o,e,d,f,h,m){return c(),r("div",_,p)}const k=a(u,[["render",l]]);export{k as default};
