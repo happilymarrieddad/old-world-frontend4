@@ -17,4 +17,5 @@ message UserArmy {
     int64 points = 7;
     repeated userarmies.ArmyUnit units = 8;
     google.protobuf.Timestamp createdAt = 9;
+    int64 used_points = 10;
 }

@@ -18,6 +18,19 @@
     <h5>Release History</h5>
     <ul>
       <li>
+        v1.1.2 - 4/30/24
+        <ol>
+          <li>Added update to existing army units when a unit type update happens.</li>
+          <li>Added a profanity filter because some people...</li>
+        </ol>
+      </li>
+      <li>
+        v1.1.1 - 4/22/24
+        <ol>
+          <li>Fixed width on user armies.</li>
+        </ol>
+      </li>
+      <li>
         v1.1.0 - 4/17/24
         <ol>
           <li>Added CRUD for Statistics.</li>

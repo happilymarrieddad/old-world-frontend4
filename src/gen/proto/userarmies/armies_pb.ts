@@ -56,6 +56,11 @@ export class UserArmy extends Message<UserArmy> {
    */
   createdAt?: Timestamp;
 
+  /**
+   * @generated from field: int64 used_points = 10;
+   */
+  usedPoints = protoInt64.zero;
+
   constructor(data?: PartialMessage<UserArmy>) {
     super();
     proto3.util.initPartial(data, this);
@@ -73,6 +78,7 @@ export class UserArmy extends Message<UserArmy> {
     { no: 7, name: "points", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
     { no: 8, name: "units", kind: "message", T: ArmyUnit, repeated: true },
     { no: 9, name: "createdAt", kind: "message", T: Timestamp },
+    { no: 10, name: "used_points", kind: "scalar", T: 3 /* ScalarType.INT64 */ },
   ]);
 
   static fromBinary(bytes: Uint8Array, options?: Partial<BinaryReadOptions>): UserArmy {
