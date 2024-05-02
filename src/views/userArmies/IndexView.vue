@@ -29,13 +29,19 @@ const columns = ref<any>([
     )
   },
   {
-    key: 'usedPoints',
-    dataKey: 'usedPoints',
-    width: 80,
+    key: 'points',
+    dataKey: 'points',
+    width: 120,
     fixed: TableV2FixedDir.RIGHT,
-    title: 'Used Points'
+    title: 'Used / Points',
+    cellRenderer: (data: any) => (
+      <>
+        <span>
+          {data.rowData.usedPoints} / {data.rowData.points}
+        </span>
+      </>
+    )
   },
-  { key: 'points', dataKey: 'points', width: 80, fixed: TableV2FixedDir.RIGHT, title: 'Points' },
   {
     dataKey: 'id',
     width: 200,
